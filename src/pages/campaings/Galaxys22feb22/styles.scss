@@ -1,0 +1,267 @@
+.video{
+    width: 80vw;
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+
+    &-wrapper{
+        width: 100%;
+        padding-bottom: 45.5vw;
+    }
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+.models{
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    margin: 80px auto 0px;
+    .model{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 4rem;
+        >div{
+            margin-top: 2rem;
+        }
+        /*h3{
+            font-size: 40px;
+            line-height: 50px;
+            padding: 0 6.89655%;
+            margin-bottom: 20px;
+        }*/
+    }
+}
+.terms{
+    gap: 2rem;
+}
+.title-galaxy{
+    background-color: #f5f5f5;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.modal-container{
+    width: 100%;
+    display: flex;
+    max-width: 936px;
+    height: 100%;
+    max-height: 85vh;
+    background-color: #fff;
+    border-radius: 1.38vw;
+    flex-direction: column;
+    overflow: hidden;
+
+    .modal-header{
+        display: grid;
+        justify-content: space-between;
+        padding: 16px 36px 0;
+        align-items: center;
+        grid-template-columns: auto auto;
+        border-bottom: 1px solid #ccc;
+        min-height: 100px;
+        h2{
+            font-size: 28px;
+        }
+        .stores{
+            grid-column: span 2;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            span{
+                color: #1428a0;
+                font-size: 14px;
+                font-weight: 700;
+                position: relative;
+                padding-bottom: 5px;
+                user-select: none;
+                cursor: pointer;
+            }
+            span:after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #1428a0;
+            }
+        }
+    }
+    .modal-footer{
+        p{
+            padding: 18px 40px 17px;
+            background-color: #e8e8e8;
+            font-size: 14px;
+            color: #202427;
+            letter-spacing: -0.014em;
+        }
+    }
+    .modal-body{
+        flex: 1;
+        overflow-y: auto;
+        background-color: #f1f1f1;
+        .where-to-buy{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            padding: 16px 24px;
+            gap: 24px;
+            &__item{
+                padding: 18px 15px;
+                display: flex;
+                flex-direction: column;
+                border-radius: 16px;
+                overflow: hidden;
+                background-color: #fff;
+                min-height: 180px;
+            }
+            &__logo{
+                display: flex;
+                justify-content: center;
+                flex: 1;
+                img{
+                    object-fit: contain;
+                    object-position: top;
+                    max-width: 135px;
+                }
+            }
+            &__name{
+                font-size: 14px;
+                font-weight: 700;
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: flex-end;
+                span{
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
+
+.icon-step{
+    position: absolute;
+    width: 100%;
+    object-fit: contain;
+    top: 20px;
+}
+
+.steps{
+    display: grid;
+    max-width: 75vw;
+    @media screen and (max-width: 1500px) {
+        max-width: 85vw;
+    }
+    margin: 80px auto 40px;
+    grid-template-columns: repeat(3, 1fr);
+    p{
+        grid-column: span 3;
+        text-align: center;
+    }
+    .terms{
+        margin-top: 2rem;
+        margin-bottom: .5rem;
+        font-size: 18px;
+        &__message{
+            font-size: 14px;
+            margin-bottom: 2rem;
+        }
+    }
+    .step{
+        padding: 0 3.5rem;
+        border-left: 2px solid #000;
+        p{
+            text-align: left;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        div{
+            font-size: 110px;
+            font-weight: 700;
+            color: #000;
+            position: relative;
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            
+        }
+    }
+    .step:first-child{
+        border-left: 0px;
+    }
+}
+
+.swiper-wrapper{
+    margin-bottom: 40px;
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .terms{
+        display: block;
+        text-align: center;
+        >:first-child{
+            margin-bottom: 1rem;
+        }
+    }
+    .models{
+        flex-direction: column;
+        width: 95vw;
+        .model{
+            width: 100%;
+            margin-bottom: 3rem;
+            >div{
+                margin-top: 2rem;
+            }
+        }
+    }
+    .modal-container{
+        max-height: unset;
+    }
+    .modal-header>div{
+        width: 14px !important;
+    }
+    .modal-container .modal-header h2{
+        font-size: 5.5vw;
+    }
+    .where-to-buy{
+        grid-template-columns: 1fr !important;
+    }
+    .where-to-buy__item{
+        flex-direction: row !important;
+        align-items: center !important;
+        min-height: 110px !important;
+        gap: 20px !important;
+    }
+    .modal-container .modal-footer p{
+        font-size: 4vw;
+    }
+    .modal-body{
+        overflow-y: auto;
+    }
+    .modal-container .modal-header .stores{
+        width: 100% !important;
+    }
+    .steps{
+        display: flex;
+        flex-direction: column;
+        .step{
+            border-left: 0px;
+            padding: 0;
+            margin-bottom: 2rem;
+            div{
+                font-size: 80px;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+}
