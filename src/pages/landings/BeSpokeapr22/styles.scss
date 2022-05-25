@@ -2,10 +2,8 @@ html {
     scroll-behavior: smooth!important;
   }
 
-#bespokeapr22{
-    #recaptcha-form{
-        display: none;
-    }
+
+
     .form-bespokeapr22{
         padding: 10px 20px 20px;
         border-radius: 3px;
@@ -33,7 +31,7 @@ html {
             height: auto;
         }
         .error-checkbox{
-            border: 2px solid red;
+            border: 2px solid red!important;
             animation: scale-animation .2s 1;
         }
         @keyframes scale-animation{
@@ -271,4 +269,28 @@ html {
         max-width: 350px;
         margin: auto;
     }
+
+    .container{
+        display: flex;
+flex-direction: column;
+margin-left: auto;
+margin-right: auto;
+max-width: 1920px;
+padding: 0 80px;
+    }
+
+.grid-images{
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3,1fr);
+    box-sizing: border-box;
+}
+.fito-desing{
+    display: grid;
+    gap: 24px;
+grid-template-columns: repeat(4,1fr);
+}
+.gnb{
+    position: relative;
+z-index: 999;
 }

@@ -4,7 +4,6 @@ import Carousel from '../../../components/carousel/Slider';
 import Footer from '../../../components/footer'
 import Header from '../../../components/header'
 import { useDevice } from '../../../hooks/useDevice';
-import './styles.scss'
 // import MainSlide_Desktop from '../../../assets/images/bespoke/mainslide_desktop.png'
 // import MainSlide_Mobile from '../../../assets/images/bespoke/mainslide_mobile.png'
 import Intro_Desktop from '../../../assets/images/bespoke/BeSpoke_Preregistro_Landing_1922x1110.jpg'
@@ -13,6 +12,7 @@ import carousel_img from '../../../assets/images/bespoke/Intro-Fito-800x770_Desk
 import Collapsible from '../../../components/Collapsible';
 import ScrollTo from './components/ScrollTo';
 import FormBespoke from './components/FormBespoke';
+import './styles.scss';
 
 
 const BeSpokeapr22 = () => {
