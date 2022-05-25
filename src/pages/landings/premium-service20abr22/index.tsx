@@ -28,7 +28,7 @@ const PremiumService = () => {
 
             <div className="ps--terms-container">
                 <h4 className="terms-title"> 
-                    <a href="https://res.cloudinary.com/cheil-peru/image/upload/v1650572726/tyc/Requerimientos_y_Condiciones_de_Instalaci%C3%B3n_uf2wx9.pdf" target="_blank" rel="noreferrer">Términos y Condiciones</a> 
+                    <a href="https://res.cloudinary.com/cheil-peru/image/upload/v1653496564/tyc/terminos_y_condiciones_de_instalaci%C3%B3n_2022_srnsfu.pdf" target="_blank" rel="noreferrer">Términos y Condiciones</a> 
                 </h4>
             </div>
         </div>
