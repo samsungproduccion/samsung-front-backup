@@ -17,10 +17,10 @@ const Router:FC = () => {
             <Routes>
                 {/* <Route path="*" element={<ThankBespoke />} /> */}
                 {/* <Route path="*" element={<PremiumService />} /> */}
-                <Route path="*" element={<BeSpokeRegistro />}  />
+                <Route path="*" element={<BeSpokeRegistro />} />
             </Routes>
         </BrowserRouter>
     )
 }
 
-export default Router
+export default Router;
