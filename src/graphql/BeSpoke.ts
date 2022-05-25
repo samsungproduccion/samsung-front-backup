@@ -46,3 +46,29 @@ export const CREATE_EVOUCHER_BESPOKE = gql`
     }
   }
 `;
+
+export const CREATE_BESPOKE= gql`
+mutation AddBeSpokeUser($name: String!, $lastname: String!, $dni: String!, $email: String!, $phone: String!) {
+  addBeSpokeUser(name: $name, lastname: $lastname, dni: $dni, email: $email, phone: $phone) {
+      name
+      lastname
+      dni
+      email
+      phone
+    }
+  }
+
+`;
+
+
+export const BESPOKE_LIST = gql`
+    query BeSpokeList {
+        BeSpokeList {
+        phone
+        email
+        lastname
+        name
+        dni
+        }
+    }
+`;

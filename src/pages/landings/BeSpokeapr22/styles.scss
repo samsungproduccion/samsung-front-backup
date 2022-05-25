@@ -1,0 +1,274 @@
+html {
+    scroll-behavior: smooth!important;
+  }
+
+#bespokeapr22{
+    #recaptcha-form{
+        display: none;
+    }
+    .form-bespokeapr22{
+        padding: 10px 20px 20px;
+        border-radius: 3px;
+        box-shadow: 0px 17px 41px rgba(0, 0, 0, 0.2);
+        border-top: 9px solid #000;
+
+        height: calc(100% - 39px);
+
+        form{
+            padding-bottom: 40px;
+        }
+
+        .input---error{
+            color: red;
+            padding-left: 0px;
+            font-size: 13px;
+        }
+        .ch-btn{
+            svg{
+                width: 25px;
+            }
+        }
+
+        @media screen and (max-width:1024px){
+            height: auto;
+        }
+        .error-checkbox{
+            border: 2px solid red;
+            animation: scale-animation .2s 1;
+        }
+        @keyframes scale-animation{
+            from{
+                transform: scale(2);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+    }
+    .fito-desing{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        img{
+            max-height: 500px;
+            object-fit: contain;
+        }
+        @media screen and (max-width:1024px){
+            display: flex;
+            flex-direction: column;
+            img{
+                height: auto;
+            }
+        }
+    }
+    .text-center{
+        text-align: center;
+    }
+    .a-subtitle{
+        margin-bottom: 1.75rem;
+        font-size: 18px;
+        padding-top: 5px;
+    }
+    .common-title{
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+    .form-container{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 3fr 4fr;
+        gap: 24px;
+        >div{
+            width: 100%;
+            
+            
+        }
+        @media screen and (max-width:1024px) {
+            grid-template-columns: 1fr;   
+        }
+    }
+    .function{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+
+        &-collapsibles{
+            display: flex;
+            flex-direction: column;
+
+            .collapsible{
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+            .collapsible-open{
+                border-top: 3px solid #000;
+            }
+            margin-top: 4rem;
+            &__header{
+                display: flex;
+                align-items: center;
+            }
+            &__number{
+                margin-left: 14px;
+                margin-right: 30px;
+                font-size: 14px;
+                font-weight: 700;
+            }
+            &__text{
+                font-family: "SamsungSharpSans", Arial;
+                font-size: 1.2rem;
+            }
+            &__content{
+                margin-left: 60px;
+                margin-top: 16px;
+                user-select: none;
+            }
+            &__content a{
+                margin-top: 12px;
+                display: inline-flex;
+                cursor: pointer;
+                border-bottom: 3px solid #000;
+            }
+        }
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+    }
+    >.container{
+        display: flex;
+        max-width: 1920px;
+        padding: 0 80px;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        >section{
+            margin-bottom: 2.25rem;
+        }
+        @media screen and (max-width:1024px) {
+            padding: 0 20px;
+        }
+    }
+    .grid-images{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+
+        .grid-image{
+            width: 100%;
+            grid-row: span 4;
+            height: 100%;
+            object-fit: cover;
+        }
+        .grid-image:first-child{
+            grid-column: span 2;
+        }
+        .grid-image:nth-child(2){
+            grid-row: span 3;
+        }
+        .grid-image:nth-child(3){
+            grid-row: span 5;
+        }
+        @media screen and (max-width: 1024px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .colors{
+        margin-top: 32px;
+        margin-bottom: 56px;
+        &-group{
+            display: flex;
+            justify-content: center;
+            .swiper{
+                width: 100%;
+            }
+            &__glass{
+                margin-right: 24px;
+                padding-right: 24px;
+                border-right: 2px solid rgb(212, 212, 212);
+                @media screen and (max-width:1024px) {
+                    margin-right: 0;
+                    padding-right: 0;
+                    border-right: 0;
+                    border-bottom: 2px solid rgb(212, 212, 212);
+                    margin-bottom: 24px;
+                    padding-bottom: 24px;
+                }
+            }
+            >div{
+                display: flex;
+                @media screen and (max-width:1024px) {
+                    flex-wrap: wrap;
+                }
+            }
+            @media screen and (max-width:1024px) {
+                flex-direction: column;
+            }
+        }
+        &-item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+
+            img{
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                padding: 2px;
+                box-shadow: 0px 4px 6px 1px #abababbd;
+            }
+
+            span{
+                font-size: 12px;
+                font-weight: 700;
+                font-family: "SamsungSharpSans", Arial;
+            }
+        }
+    }
+
+    .scroll-to{
+        display: inline-block;
+        position: sticky;
+        bottom: 10px;
+        left: 90%;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin-right: 2px;
+        border-radius: 25px;
+        font-family: sans-serif;
+        color: #fff;
+        background: #000;
+        opacity: .9;
+        z-index: 1;
+      }
+      .no-op{
+        opacity: 0;
+        transition: .5s;
+      }
+
+    #form-bespokeapr22 .form-container-component{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 24px;
+        margin-bottom: 1.5rem;
+
+        .ch-ff__field {
+            width: 100%;
+
+            input{
+                border: 1px solid #d9d9d9;
+                border-radius: 3px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    #btnSend{
+        max-width: 350px;
+        margin: auto;
+    }
+}

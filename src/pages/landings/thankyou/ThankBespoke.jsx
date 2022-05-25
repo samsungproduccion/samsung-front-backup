@@ -6,16 +6,13 @@ import IconYt from "../../../assets/images/icons/icon-yt-90.webp";
 import banner from '../../../assets/images/bespoke/main-banner-desktop.gif';
 import banner_mobile from '../../../assets/images/bespoke/main-banner-mobile.gif';
 import './style.scss';
+import { InitGtm } from '../../../utils/gtm';
 
 const ThankBespoke = ()=>{
 
     const { isDesktop, isMobile, isTablet, isLaptop } = useDevice();
 
-    // const path = 'http://localhost:3000';
-    // const path = 'http://localhost:3000/premium-service';
-  // const path = 'http://localhost/react/premium-service';
-  // const path = 'https://premium-service.netlify.app';
-  // const path = 'https://www.samsung.com.pe/premium-service';
+    InitGtm('GTM-KTFDR5Q');;
 
     return (
         <>
