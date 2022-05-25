@@ -69,7 +69,7 @@ const FormBespoke = () => {
           resetForm();
           setLoading(false);
 
-          alert('Se registro exitosamente !!! ');
+          window.location.href = 'http://front-test.samsung.com.pe/thanks-bespoke';
         }
         // console.log(data)
         setLoading(false);
