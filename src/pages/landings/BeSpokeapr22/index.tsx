@@ -1,8 +1,8 @@
 // import { useContext } from 'react';
 // import { CampaingContext } from '../../../components/campaingtemplate/CampaingTemplate';
 import Carousel from '../../../components/carousel/Slider';
-import Footer from '../../../components/footer'
-import Header from '../../../components/header'
+import Footer from "../../../components/footer_v2/Footer";
+import Header from "../../../components/header_v2/Header";
 import { useDevice } from '../../../hooks/useDevice';
 // import MainSlide_Desktop from '../../../assets/images/bespoke/mainslide_desktop.png'
 // import MainSlide_Mobile from '../../../assets/images/bespoke/mainslide_mobile.png'
