@@ -3,7 +3,7 @@ import {
     BrowserRouter,
     Routes,
     Route,
-    HashRouter
+    // HashRouter
 } from "react-router-dom";
 import BeSpokeRegistro from "./pages/landings/bespoke-registrom0522";
 // import NigthBeyond from "./pages/landings/night-beyond05abr22";
@@ -15,10 +15,16 @@ const Router:FC = () => {
     return ( 
         <BrowserRouter>
             <Routes>
-                {/* <Route path="*" element={<ThankBespoke />} /> */}
-                {/* <Route path="*" element={<PremiumService />} /> */}
-                <Route path="*" element={<BeSpokeRegistro />} />
+                <Route path="*" element={<PremiumService />} />
             </Routes>
+
+            {/* <Routes>
+                <Route path="/" element={<PremiumService />} />
+                <Route path="/premium-service" element={<PremiumService />} />
+                <Route path="/thanks-bespoke" element={<ThankBespoke />} />
+                <Route path="/bespoke-registro" element={<BeSpokeRegistro />} />
+            </Routes> */}
+
         </BrowserRouter>
     )
 }

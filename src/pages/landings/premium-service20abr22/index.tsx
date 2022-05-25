@@ -1,3 +1,4 @@
+import TagManager from "react-gtm-module";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 import Footer from "../../../components/footer_v2/Footer";
 import Header from "../../../components/header_v2/Header";
@@ -8,8 +9,12 @@ import Tabs from "./components/Tabs";
 import './styles.scss';
 
 // const Tabs = lazy(() => import('./components/Tabs'));
+const tagManagerArgs = {
+    gtmId: 'GTM-MLKDFDF'
+}
 
 const PremiumService = () => {
+    if(tagManagerArgs) TagManager.initialize(tagManagerArgs)
     const deviceSize = useDevice();
     return (
         <>
