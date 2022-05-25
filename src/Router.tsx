@@ -14,16 +14,16 @@ import ThankBespoke from "./pages/landings/thankyou/ThankBespoke";
 const Router:FC = () => {
     return ( 
         <BrowserRouter>
-            <Routes>
-                <Route path="*" element={<PremiumService />} />
-            </Routes>
-
             {/* <Routes>
+                <Route path="*" element={<PremiumService />} />
+            </Routes> */}
+
+            <Routes>
                 <Route path="/" element={<PremiumService />} />
                 <Route path="/premium-service" element={<PremiumService />} />
                 <Route path="/thanks-bespoke" element={<ThankBespoke />} />
                 <Route path="/bespoke-registro" element={<BeSpokeRegistro />} />
-            </Routes> */}
+            </Routes>
 
         </BrowserRouter>
     )

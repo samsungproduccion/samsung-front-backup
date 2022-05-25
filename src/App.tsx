@@ -9,8 +9,8 @@ import {
   ApolloLink
 } from "@apollo/client"
 
-const httpLink = new HttpLink({ uri: 'http://localhost:4040' });
-// const httpLink = new HttpLink({ uri: 'http://ec2-18-188-2-113.us-east-2.compute.amazonaws.com/api/' });
+// const httpLink = new HttpLink({ uri: 'http://localhost:4040' });
+const httpLink = new HttpLink({ uri: 'http://18.223.190.134/api/' });
 
 const authLink = new ApolloLink((operation, forward) => {
   const token = localStorage.getItem('auth_token');
