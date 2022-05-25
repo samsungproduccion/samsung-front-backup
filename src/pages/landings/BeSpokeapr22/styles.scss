@@ -261,9 +261,9 @@ section{
 
 .scroll-to{
     display: inline-block;
-    position: sticky;
+    position: fixed;
     bottom: 10px;
-    left: 90%;
+    right:  0;
     text-decoration: none;
     padding: 10px 20px;
     margin-right: 2px;
@@ -283,4 +283,8 @@ section{
     background: unset!important;
     padding: 20px!important;
     padding-left: 20px!important;
+  }
+
+  h2{
+      padding-bottom: unset!important;
   }
