@@ -16,8 +16,8 @@ const Router:FC = () => {
         <BrowserRouter>
             <Routes>
                 {/* <Route path="*" element={<ThankBespoke />} /> */}
-                <Route path="*" element={<PremiumService />} />
-                {/* <Route path="*" element={<BeSpokeRegistro />} /> */}
+                {/* <Route path="*" element={<PremiumService />} /> */}
+                <Route path="*" element={<BeSpokeRegistro />} />
             </Routes>
         </BrowserRouter>
     )
