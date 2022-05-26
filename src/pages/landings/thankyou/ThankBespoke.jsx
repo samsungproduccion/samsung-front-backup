@@ -12,7 +12,7 @@ const ThankBespoke = ()=>{
 
     const { isDesktop, isMobile, isTablet, isLaptop } = useDevice();
 
-    InitGtm('GTM-KTFDR5Q');;
+    InitGtm('GTM-KTFDR5Q');
 
     return (
         <>
