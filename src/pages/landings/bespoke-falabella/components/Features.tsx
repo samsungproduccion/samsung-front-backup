@@ -13,8 +13,8 @@ const Features = () => {
         </div>
         <div className="feature-list">
             {feature_list? 
-                feature_list.map((feature) =>(
-                    <div className="feature">
+                feature_list.map((feature, i) =>(
+                    <div key={i} className="feature">
                         <div className="info">
                             <h4 className="feature-title">{feature.title}</h4>
                             <p className="feature-description">

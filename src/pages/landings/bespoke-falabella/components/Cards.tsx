@@ -6,9 +6,9 @@ const Cards = () => {
     <div className="card-container">
         {
             cardItem?
-                cardItem.map((card) =>(
-                    <div className="card">
-                        <div className="card-image">
+                cardItem.map((card, i) =>(
+                    <div key={i} className="card">
+                        <div  className="card-image">
                             <img src={card.image} alt={card.alt} />
                         </div>
                         <div className="card-info">
