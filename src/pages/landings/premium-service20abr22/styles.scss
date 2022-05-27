@@ -161,11 +161,17 @@
         line-height: 19px;
         color: #949494;
         font-weight: bold;
+        transition: all 0.2s ease-out 0s;
+        border-bottom: 2px solid #fff;
+      }
+      li:hover {
+        color: #717171;
+        border-bottom: 2px solid #717171;
       }
       li.active {
         border-bottom: 2px solid #000000;
         color: #000000;
-        transition: 0.2s;
+        // transition: 0.2s;
       }
     }
   }
