@@ -7,7 +7,7 @@
   overflow-x: hidden;
 }
 .ps--hero {
-  // max-width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
 
   .call-info {
@@ -34,7 +34,7 @@
     }
   }
   .carousel {
-    height: 600px;
+    // height: 600px;
   }
   .main--slider {
     .slider--container {
@@ -505,7 +505,7 @@
 @media screen and (max-width: 1450px) {
   .ps--hero {
     .carousel {
-      height: 450px;
+      // height: 450px;
     }
   }
 }
@@ -542,7 +542,7 @@
 @media screen and (max-width: 1024px) {
   .ps--hero {
     .carousel {
-      height: 400px;
+      // height: 400px;
     }
   }
   .popup-container {
@@ -592,7 +592,7 @@
     }
 
     .carousel {
-      height: 550px;
+      // height: 550px;
     }
   }
 
