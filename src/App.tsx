@@ -10,7 +10,8 @@ import {
 } from "@apollo/client"
 
 // const httpLink = new HttpLink({ uri: 'http://localhost:4040' });
-const httpLink = new HttpLink({ uri: 'http://18.223.190.134/api/' });
+// const httpLink = new HttpLink({ uri: 'http://back.samsung.com.pe/prod' });
+const httpLink = new HttpLink({ uri: 'http://back.samsung.com.pe/test' });
 
 const authLink = new ApolloLink((operation, forward) => {
   const token = localStorage.getItem('auth_token');

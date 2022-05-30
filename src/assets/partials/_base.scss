@@ -3739,3 +3739,20 @@ html[lang^="th"] [data-font-size-pc="12"] {
 	padding-top: 5px;
 	padding-left: 5px;
 }
+
+.submit-button-form{
+	
+	svg{
+		margin: auto;
+		shape-rendering: auto;
+	}
+}
+
+.ch-btn{
+	cursor: pointer;
+}
+
+.error-checkbox{
+	border: 2px solid red!important;
+	animation: scale-animation .2s 1;
+}

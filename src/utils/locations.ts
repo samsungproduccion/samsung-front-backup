@@ -1,5 +1,25 @@
 import { city, district, state } from "../types/locations";
 
+export const getState = (stateId: string) => {
+  const selectedState = states.filter(state =>(state.id === stateId))
+
+  return selectedState[0].id;
+}
+
+export const getCity = (stateId: string, cityId: string) => {
+  const selectedCity = cities.filter(city =>(city.id === cityId && city.id_state === stateId)
+  )
+
+  return selectedCity[0].id;
+}
+
+export const getDistrict = (stateId: string, cityId: string, districtId: string) => {
+  const selectedDistrict = districts.filter(district =>(district.id === districtId && district.codeCity === cityId && district.codeState===stateId))
+
+  return selectedDistrict[0].id;
+}
+
+
 export const states: state[] = [
   {
     id: "1",
@@ -12087,3 +12107,4 @@ export const districts: district[] = [
     name: "PURUS",
   },
 ];
+

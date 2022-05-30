@@ -16,7 +16,7 @@ const Router:FC = () => {
     return ( 
         <BrowserRouter>
             {/* <Routes>
-                <Route path="/bespoke-falabella" element={<BespokeFalabella />} />
+                <Route path="/bespoke" element={<BeSpokeapr22 />} />
             </Routes> */}
 
             <Routes>

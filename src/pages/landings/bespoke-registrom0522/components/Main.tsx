@@ -1,4 +1,4 @@
-import FormBespoke from "./FormBespoke";
+import FormBspoke from "./FormBspoke";
 
 const Main = () => {
   return (
@@ -10,7 +10,7 @@ const Main = () => {
       <p className="paragraph text-center">
         Todos los campos con (*) son obligatorios
       </p>
-      <FormBespoke />
+      <FormBspoke />
     </div>
   );
 };

@@ -8,6 +8,7 @@ import { sweetAlert } from "../../../../components/alert/sweetAlert";
 import { useMutation } from "@apollo/client";
 import { UploadFile } from "../../../../utils/uploadFile";
 import { CREATE_EVOUCHER_BESPOKE } from "../../../../graphql/BeSpoke";
+import SubmitButton from "../../../../components/forms_v2/Submit";
 
 const FormBespoke: FC = () => {
   const artRef = useRef<HTMLSelectElement>(null);
@@ -34,7 +35,7 @@ const FormBespoke: FC = () => {
   });
 
 
-  const { Locationjsx, city, district, state, error } = Locations();
+  // const { Locationjsx, city, district, state, error } = Locations();
   // console.log({city, district, state});
   const handleChange = () => {
     // formik.handleChange;
@@ -80,11 +81,11 @@ const FormBespoke: FC = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
 
-      if(city==='' || district==='' || state==='' ) {
-        return error(true);
-      } else{
-        error(false);
-      }
+      // if(city==='' || district==='' || state==='' ) {
+      //   return error(true);
+      // } else{
+      //   error(false);
+      // }
     
       if (privacy === false || terms === false){
         return sweetAlert(
@@ -102,25 +103,25 @@ const FormBespoke: FC = () => {
         
  
       setLoading(true);
-      try {
-        // const validRecaptcha = await recaptcha.current.execute();
-        // if (!validRecaptcha) return setLoading(false);
+      // try {
+      //   // const validRecaptcha = await recaptcha.current.execute();
+      //   // if (!validRecaptcha) return setLoading(false);
 
-        const response = await createUser({ variables: { ...values, marketingOption:information,image: imagenUrl,   city, state, district, art: art.name } });
+      //   const response = await createUser({ variables: { ...values, marketingOption:information,image: imagenUrl,   city, state, district, art: art.name } });
 
-        if (response.data?.addEvoucherBespoke) {
-          resetForm();
-          setLoading(false);
+      //   if (response.data?.addEvoucherBespoke) {
+      //     resetForm();
+      //     setLoading(false);
 
-          alert('se creo');
-        }
-        // console.log(data)
-        setLoading(false);
-      } catch (error) {
-        console.log(error)
-        setLoading(false)
-      }
-      console.log({...values,marketingOption: information,image: imagenUrl,   city, state, district, art: art.name});
+      //     alert('se creo');
+      //   }
+      //   // console.log(data)
+      //   setLoading(false);
+      // } catch (error) {
+      //   console.log(error)
+      //   setLoading(false)
+      // }
+      // console.log({...values,marketingOption: information,image: imagenUrl,   city, state, district, art: art.name});
       setLoading(false);
     },
   });
@@ -213,7 +214,7 @@ const FormBespoke: FC = () => {
               <p className="input---error">{formik.errors.phone}</p>
             ) : null}
           </div>
-          {Locationjsx}
+          <Locations />
           <div className="ch-ff__field fileUploader" >
             <label htmlFor="product">Adjunta tu Boleta (*)</label>
             <input ref={imageRef} type="file" accept=".jpg, .jpeg, .png, .pdf, .tif, .bmp"  
@@ -311,50 +312,7 @@ const FormBespoke: FC = () => {
             </label>
           </div>
         </div>
-        <div className="button--container">
-          {loading ? (
-            <button className="ch-btn" id="btnSend" disabled>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                style={{
-                  background: "rgb(255, 255, 255) none repeat scroll 0% 0%;",
-                  margin: "auto",
-                  shapeRendering: "auto",
-                }}
-                width="30x"
-                height="30x"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="xMidYMid"
-              >
-                <circle
-                  cx="50"
-                  cy="50"
-                  fill="none"
-                  stroke="#fdfdfd"
-                  strokeWidth="12"
-                  r="26"
-                  strokeDasharray="122.52211349000194 42.840704496667314"
-                >
-                  <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    repeatCount="indefinite"
-                    dur="1.5384615384615383s"
-                    values="0 50 50;360 50 50"
-                    keyTimes="0;1"
-                  ></animateTransform>
-                </circle>
-              </svg>
-            </button>
-          ) : (
-            <input
-              type="submit"
-              className="ch-btn"
-              id="btnSend"
-              value="REGÍSTRATE"
-            />
-          )}
-        </div>
+        <SubmitButton loading={loading} value={'REGISTRATE'} />
       </form>
     </div>
   );

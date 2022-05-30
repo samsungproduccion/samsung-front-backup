@@ -13,6 +13,7 @@ import Collapsible from '../../../components/Collapsible';
 import ScrollTo from './components/ScrollTo';
 import FormBespoke from './components/FormBespoke';
 import './styles.scss';
+import FormBspoke from './components/FormBspoke';
 
 
 const BeSpokeapr22 = () => {
@@ -27,10 +28,10 @@ const BeSpokeapr22 = () => {
             <div className='container'>
                 <section>
                     {(isDesktop || isLaptop) && (
-                        <img src={`/images/bespoke/BeSpoke_Preregistro_Landing_1902x650px.gif`} alt='Bespoke Fito Espinoza' width='100%'/>
+                        <img src={`/bespoke/images/bespoke/BeSpoke_Preregistro_Landing_1902x650px.gif`} alt='Bespoke Fito Espinoza' width='100%'/>
                     )}
                     {(isMobile || isTablet) && (
-                        <img src={`/images/bespoke/BeSpoke_Preregistro_Landing_768x600px.gif`} alt='Bespoke Fito Espinoza' width='100%'/>
+                        <img src={`/bespoke/images/bespoke/BeSpoke_Preregistro_Landing_768x600px.gif`} alt='Bespoke Fito Espinoza' width='100%'/>
                     )}
                     {/* {(isMobile || isTablet) && (
                         <img src={MainSlide_Mobile} alt='Bespoke Fito Espinoza' width='100%'/>
@@ -49,7 +50,8 @@ const BeSpokeapr22 = () => {
                         </Carousel> */}
 
                         <img className='grid-image' src={(isDesktop || isLaptop) ? carousel_img : carousel_img} alt="Bespoke promotion 1" width="100%"/>
-                        <FormBespoke />
+                        {/* <FormBespoke /> */}
+                        <FormBspoke />
 
                     </div>
                 </section>
@@ -66,46 +68,46 @@ const BeSpokeapr22 = () => {
                           {(isDesktop || isLaptop) && (
                               <Carousel>
                                 <div className='fito-desing'>
-                                  <img src={`/images/bespoke/fito-artes-1.jpg`} alt='Galaxy S22' width='100%'/>
-                                  <img src={`/images/bespoke/fito-artes-2.jpg`} alt='Galaxy S22 Plus' width='100%'/>
-                                  <img src={`/images/bespoke/fito-artes-3.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
-                                  <img src={`/images/bespoke/fito-artes-4.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-1.jpg`} alt='Galaxy S22' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-2.jpg`} alt='Galaxy S22 Plus' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-3.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-4.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
                                 </div>
                                 <div className='fito-desing'>
-                                  <img src={`/images/bespoke/fito-artes-5.jpg`} alt='Galaxy S22' width='100%'/>
-                                  <img src={`/images/bespoke/fito-artes-6.jpg`} alt='Galaxy S22 Plus' width='100%'/>
-                                  <img src={`/images/bespoke/fito-artes-7.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
-                                  <img src={`/images/bespoke/fito-artes-8.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-5.jpg`} alt='Galaxy S22' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-6.jpg`} alt='Galaxy S22 Plus' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-7.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-8.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
                                 </div>
                                 <div className='fito-desing'>
-                                  <img src={`/images/bespoke/fito-artes-9.jpg`} alt='Galaxy S22' width='100%'/>
-                                  <img src={`/images/bespoke/fito-artes-10.jpg`} alt='Galaxy S22 Plus' width='100%'/>
-                                  <img src={`/images/bespoke/fito-artes-11.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
-                                  <img src={`/images/bespoke/fito-artes-12.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-9.jpg`} alt='Galaxy S22' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-10.jpg`} alt='Galaxy S22 Plus' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-11.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                  <img src={`/bespoke/images/bespoke/fito-artes-12.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
                                 </div>
                             </Carousel>
                           )}
                           {(isMobile || isTablet) && (
                               <Carousel>
                                   <div style={{display:"flex",flexDirection:"column",gap:"16px"}}>
-                                    <img src={`/images/bespoke/fito-artes-1.jpg`} alt='Galaxy S22' width='100%'/>
-                                    <img src={`/images/bespoke/fito-artes-2.jpg`} alt='Galaxy S22 Plus' width='100%'/>
-                                    <img src={`/images/bespoke/fito-artes-3.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-1.jpg`} alt='Galaxy S22' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-2.jpg`} alt='Galaxy S22 Plus' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-3.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
                                   </div>
                                   <div style={{display:"flex",flexDirection:"column",gap:"16px"}}>
-                                    <img src={`/images/bespoke/fito-artes-4.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
-                                    <img src={`/images/bespoke/fito-artes-5.jpg`} alt='Galaxy S22' width='100%'/>
-                                    <img src={`/images/bespoke/fito-artes-6.jpg`} alt='Galaxy S22 Plus' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-4.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-5.jpg`} alt='Galaxy S22' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-6.jpg`} alt='Galaxy S22 Plus' width='100%'/>
                                   </div>
                                   <div style={{display:"flex",flexDirection:"column",gap:"16px"}}>
-                                    <img src={`/images/bespoke/fito-artes-7.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
-                                    <img src={`/images/bespoke/fito-artes-8.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
-                                    <img src={`/images/bespoke/fito-artes-9.jpg`} alt='Galaxy S22' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-7.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-8.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-9.jpg`} alt='Galaxy S22' width='100%'/>
                                   </div>
                                   <div style={{display:"flex",flexDirection:"column",gap:"16px"}}>
-                                    <img src={`/images/bespoke/fito-artes-10.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
-                                    <img src={`/images/bespoke/fito-artes-11.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
-                                    <img src={`/images/bespoke/fito-artes-12.jpg`} alt='Galaxy S22' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-10.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-11.jpg`} alt='Galaxy S22 Ultra' width='100%'/>
+                                    <img src={`/bespoke/images/bespoke/fito-artes-12.jpg`} alt='Galaxy S22' width='100%'/>
                                   </div>
                               </Carousel>
                           )}
@@ -113,11 +115,11 @@ const BeSpokeapr22 = () => {
                     </div>
 
                     <div className='grid-images'>
-                        <img className='grid-image' src={`/images/bespoke/bespoke-1.jpg`} alt="Bespoke promotion 1"/>
-                        <img className='grid-image' src={`/images/bespoke/bespoke-2.jpg`} alt="Bespoke promotion 2"/>
-                        <img className='grid-image' src={`/images/bespoke/bespoke-5.jpg`} alt="Bespoke promotion 5"/>
-                        <img className='grid-image' src={`/images/bespoke/bespoke-3.jpg`} alt="Bespoke promotion 3"/>
-                        <img className='grid-image' src={`/images/bespoke/bespoke-4.jpg`} alt="Bespoke promotion 4"/>
+                        <img className='grid-image' src={`/bespoke/images/bespoke/bespoke-1.jpg`} alt="Bespoke promotion 1"/>
+                        <img className='grid-image' src={`/bespoke/images/bespoke/bespoke-2.jpg`} alt="Bespoke promotion 2"/>
+                        <img className='grid-image' src={`/bespoke/images/bespoke/bespoke-5.jpg`} alt="Bespoke promotion 5"/>
+                        <img className='grid-image' src={`/bespoke/images/bespoke/bespoke-3.jpg`} alt="Bespoke promotion 3"/>
+                        <img className='grid-image' src={`/bespoke/images/bespoke/bespoke-4.jpg`} alt="Bespoke promotion 4"/>
                     </div>
                 </section>
 
@@ -144,7 +146,7 @@ const BeSpokeapr22 = () => {
                     
                     <div className='function'>
                         <div className='function-banner'>
-                            <img src={`/images/bespoke/Lifestyle+3PODs_Refrigeradoras.jpg`} width="100%" alt='Banner promotion bespoke 2022'/>
+                            <img src={`/bespoke/images/bespoke/Lifestyle+3PODs_Refrigeradoras.jpg`} width="100%" alt='Banner promotion bespoke 2022'/>
                         </div>
                         <div className='function-collapsibles'>
                             <Collapsible
