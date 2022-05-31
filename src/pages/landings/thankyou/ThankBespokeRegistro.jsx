@@ -8,7 +8,7 @@ import banner_mobile from '../../../assets/images/bespoke/main-banner-mobile.gif
 import './style.scss';
 import { InitGtm } from '../../../utils/gtm';
 
-const ThankBespoke = ()=>{
+const ThanksBespokeRegistro = ()=>{
 
     const { isDesktop, isMobile, isTablet, isLaptop } = useDevice();
 
@@ -18,7 +18,7 @@ const ThankBespoke = ()=>{
         <>
         <Header/>
         <div className="thank-you-page">
-            {(isDesktop || isLaptop) && (
+        {(isDesktop || isLaptop) && (
                 <img className='imgBanner' src={banner} width="100%" alt='bespoke banner'/>
             )}
             {(isMobile || isTablet) && (
@@ -29,7 +29,7 @@ const ThankBespoke = ()=>{
                 <h1>¡Gracias por registrarte!</h1>
                 <h2>Tus datos han sido enviados con éxito, estate muy atento a tu correo electrónico que muy pronto te
                 enviaremos información sobre la preventa del BeSpoke y acceder a beneficios insuperables.</h2>
-                <h3>Para mayor información, te invitamos a ingresar aquí <br></br> <a href='https://www.samsung.com.pe/bespoke/' target='_blank' rel="noreferrer">https://www.samsung.com.pe/bespoke/</a></h3>
+                <h3>Para mayor información, te invitamos a ingresar aquí <br></br> <a href='https://www.samsung.com.pe/bespoke-registro/' target='_blank' rel="noreferrer">https://www.samsung.com.pe/bespoke-registro/</a></h3>
             </div>
 
             <div className='divSocial'>
@@ -47,9 +47,8 @@ const ThankBespoke = ()=>{
                     </div>
                 </div>
             </div>
-
         </div>
-
+            
 
         <Footer/>
         </>
@@ -58,4 +57,4 @@ const ThankBespoke = ()=>{
 }
 
 
-export default ThankBespoke
+export default ThanksBespokeRegistro

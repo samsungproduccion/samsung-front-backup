@@ -90,7 +90,7 @@ const FormBespoke: FC = () => {
                   resetForm();
                   setLoading(false);
         
-                  alert('se creo');
+                  window.location.href = "https://samsung.com.pe/thank-you-bespoke-registro/";
                 }
                 // console.log(data)
                 setLoading(false);
