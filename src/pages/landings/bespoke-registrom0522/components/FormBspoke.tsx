@@ -72,7 +72,7 @@ const FormBespoke: FC = () => {
         }}
         validationSchema={validationForm}
         onSubmit={async (values, { resetForm }) => {
-                return console.log(values);
+                // return console.log(values);
                 const {imagenUrl, uploadError} = await UploadFile(imageRef.current.files);
                 console.log({imagenUrl, uploadError})
                 if (uploadError){ return setErrorImagen(true);}else{ setErrorImagen(false)}
