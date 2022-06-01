@@ -1,6 +1,9 @@
 const ImagesContainer = () => {
   return (
     <div className="images-container section">
+      <div className="title">
+            <p className="primary">Diseñada por ti, para ti</p>
+        </div>
       <div className="grid">
         <div className="img1">
           <img

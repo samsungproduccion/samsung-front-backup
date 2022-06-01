@@ -17,8 +17,8 @@ const BespokeFalabella = () => {
       </div>
         <Hero />
         <Video />
-        <ImagesContainer />
         <Features />
+        <ImagesContainer />
         <Cards />
         <div className="line">
         <div className="logo-samsung">

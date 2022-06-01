@@ -1,4 +1,3 @@
-import { ErrorSharp } from "@mui/icons-material";
 import { ErrorMessage, useField } from "formik";
 interface InputType1 {
   label: string;

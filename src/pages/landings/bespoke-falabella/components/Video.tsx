@@ -4,11 +4,11 @@ const Video = () => {
   return (
     <div className="video-container section">
         <div className="title">
-            <p>BESPOKE</p>
-            <p className="phrase">Diseñada por ti, para ti.</p>
+            <p>BE<span>SPOKE</span> </p>
+            <p className="phrase">Dale a tu hogar estilo</p>
         </div>
         <div className="video-box">
-        <VideoIframe link="uxneJzoKDQE" title="bespoke" />
+        <VideoIframe link="8eo-nMnKPls" title="bespoke" />
 
         </div>
       

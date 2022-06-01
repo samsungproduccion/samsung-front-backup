@@ -4,6 +4,11 @@ const Cards = () => {
    
   return(
     <div className="card-container">
+        <div className="cards-head">
+            <p>Elige tu BE<span>SPOKE</span> </p>
+            <p className="phrase">Personaliza tu estilo</p>
+        </div>
+        <div className="cards">
         {
             cardItem?
                 cardItem.map((card, i) =>(
@@ -13,12 +18,14 @@ const Cards = () => {
                         </div>
                         <div className="card-info">
                             <h4 className="card-title">{card.title}</h4>
-                            <a className="card-button" href={card.url}>Compra aquí</a>
+                            <a className="card-button" href={card.url}>COMPRA AQUÍ</a>
                         </div>
                     </div>
                 ))
                 : null
         }
+
+        </div>
     </div>
   );
 }

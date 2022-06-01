@@ -1,5 +1,4 @@
 import { Formik, Form} from "formik";
-import "../styles/styles.css";
 import * as Yup from "yup";
 
 import { FormikTextInput, FormikSelectInput, FormikCheckBox } from "./Inputs";

@@ -6,7 +6,7 @@ const Features = () => {
   return(
     <div className="features section">
         <div className="title">
-            <p className="primary">Diseño modular que se adapta a tu estilo de vida</p>
+            <p className="primary">La mejor tecnología</p>
             <p className="secundary">
                 Innovación y calidad para mantener a tus alimentos y bebidas siempre frescos
             </p>

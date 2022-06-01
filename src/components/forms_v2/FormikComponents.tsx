@@ -1,5 +1,4 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import "../styles/styles.css";
 import * as Yup from "yup";
 
 export const FormikComponents = () => {
