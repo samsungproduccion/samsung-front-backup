@@ -1,7 +1,7 @@
 import { FC, useRef, useState } from "react";
 import Locations from "../../../../components/locations";
 import { artes } from "../includes/artes";
-import { Form, Formik, useFormik } from "formik";
+import { Form, Formik } from "formik";
 import { sweetAlert } from "../../../../components/alert/sweetAlert";
 import { useMutation } from "@apollo/client";
 import { UploadFile } from "../../../../utils/uploadFile";
@@ -15,7 +15,6 @@ import {
   PrivacyCheckBox,
   TermsCheckBox,
 } from "../../../../components/forms_v2/Inputs";
-import { getCity, getDistrict, getState } from "../../../../utils/locations";
 
 const FormBespoke: FC = () => {
   const artRef = useRef<HTMLSelectElement>(null);
@@ -39,7 +38,7 @@ const FormBespoke: FC = () => {
     },
   });
 
-//   const { Locationjsx, city, district, state, error } = Locations();
+  //   const { Locationjsx, city, district, state, error } = Locations();
   // console.log({city, district, state});
   const handleChange = () => {
     // formik.handleChange;
@@ -67,43 +66,58 @@ const FormBespoke: FC = () => {
           privacy: false,
           marketingOption: false,
           state: "",
-            city: "",
-            district: "",
+          city: "",
+          district: "",
         }}
         validationSchema={validationForm}
         onSubmit={async (values, { resetForm }) => {
-                // return console.log(values);
-                const {imagenUrl, uploadError} = await UploadFile(imageRef.current.files);
-                console.log({imagenUrl, uploadError})
-                if (uploadError){ return setErrorImagen(true);}else{ setErrorImagen(false)}
-                
-                
-         
-              setLoading(true);
-              try {
-                // const validRecaptcha = await recaptcha.current.execute();
-                // if (!validRecaptcha) return setLoading(false);
-        
-                const response = await createUser({ variables: { ...values, image: imagenUrl, art: art.name } });
-        
-                if (response.data?.addEvoucherBespoke) {
-                  resetForm();
-                  setLoading(false);
-        
-                  window.location.href = "https://samsung.com.pe/thank-you-bespoke-registro/";
-                }
-                // console.log(data)
-                setLoading(false);
-              } catch (error) {
-                console.log(error)
-                setLoading(false)
-              }
-              console.log({...values,image: imagenUrl,   art: art.name});
+          // return console.log(values);
+          setLoading(true);
+          const { imagenUrl, uploadError } = await UploadFile(
+            imageRef.current.files
+          );
+          // console.log({imagenUrl, uploadError})
+          if (uploadError) {
+            setLoading(false);
+            return setErrorImagen(true);
+          } else {
+            setErrorImagen(false);
+          }
+
+          setLoading(true);
+          try {
+            // const validRecaptcha = await recaptcha.current.execute();
+            // if (!validRecaptcha) return setLoading(false);
+
+            const response = await createUser({
+              variables: { ...values, image: imagenUrl, art: art.name },
+            });
+
+            if (response.data?.addEvoucherBespoke) {
+              resetForm();
               setLoading(false);
+
+              window.location.href =
+                "https://samsung.com.pe/thank-you-bespoke-registro/";
+            }
+            // console.log(data)
+            setLoading(false);
+          } catch (error) {
+            console.log(error);
+            setLoading(false);
+          }
+          console.log({ ...values, image: imagenUrl, art: art.name });
+          setLoading(false);
         }}
       >
         {(formik) => (
           <Form>
+            <ReCAPTCHA
+              sitekey="6Lew4qkZAAAAAK50VC6HnGpNerA20BbixccSFcTh"
+              size="invisible"
+              id="recaptcha-form"
+              ref={recaptcha}
+            />
             <div className="input--container">
               <FormikTextInput
                 label="Nro de Comprobante de Pago (*)"
@@ -133,37 +147,57 @@ const FormBespoke: FC = () => {
                 type="text"
               />
               <Locations />
-              <div className="ch-ff__field fileUploader" >
-            <label htmlFor="product">Adjunta tu Boleta (*)</label>
-            <input ref={imageRef} type="file" accept=".jpg, .jpeg, .png, .pdf, .tif, .bmp"  
-              // onChange={(e)=> handleImage(e)} 
-              required
-              />
-            <p className={errorImagen ? 'img-info input---error': 'img-info'}>*Solo se podrá adjuntar un archivo con peso menor a 5MB.</p>
-            <p className={errorImagen ? 'img-info input---error': 'img-info'}>*El documento cargado debe ser legible para su validación.</p>
-            <p className={errorImagen ? 'img-info input---error': 'img-info'}>*Formatos válidos JPG, PNG, BMP, TIF, PDF.</p>
-          </div>
-          <div className="ch-ff__field">
-            <label htmlFor="art">Selecciona tu diseño (*)</label>
-            <select
-              ref={artRef}
-              name="art"
-              id="art"
-              defaultValue="0"
-              onChange={handleChange}
-            >
-              <option value="1" disabled>
-                Selecciona
-              </option>
-              {artes.map((arte, index) => (
-                <option key={index} value={arte.id}>
-                  {arte.name}
-                </option>
-              ))}
-            </select>
-            
-          </div>
-          <div></div>
+              <div className="ch-ff__field fileUploader">
+                <label htmlFor="product">Adjunta tu Boleta (*)</label>
+                <input
+                  ref={imageRef}
+                  type="file"
+                  accept=".jpg, .jpeg, .png, .pdf, .tif, .bmp"
+                  // onChange={(e)=> handleImage(e)}
+                  required
+                />
+                <p
+                  className={
+                    errorImagen ? "img-info input---error" : "img-info"
+                  }
+                >
+                  *Solo se podrá adjuntar un archivo con peso menor a 5MB.
+                </p>
+                <p
+                  className={
+                    errorImagen ? "img-info input---error" : "img-info"
+                  }
+                >
+                  *El documento cargado debe ser legible para su validación.
+                </p>
+                <p
+                  className={
+                    errorImagen ? "img-info input---error" : "img-info"
+                  }
+                >
+                  *Formatos válidos JPG, PNG, BMP, TIF, PDF.
+                </p>
+              </div>
+              <div className="ch-ff__field">
+                <label htmlFor="art">Selecciona tu diseño (*)</label>
+                <select
+                  ref={artRef}
+                  name="art"
+                  id="art"
+                  defaultValue="0"
+                  onChange={handleChange}
+                >
+                  <option value="1" disabled>
+                    Selecciona
+                  </option>
+                  {artes.map((arte, index) => (
+                    <option key={index} value={arte.id}>
+                      {arte.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div></div>
             </div>
             <div className="img-container">
               <img src={art.img} alt={art.alt} />

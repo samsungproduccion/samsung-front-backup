@@ -11,9 +11,9 @@ import {
 
 // const httpLink = new HttpLink({ uri: 'http://localhost:4040' });
 // PRODUCCION
-// const httpLink = new HttpLink({ uri: 'https://back.samsung.com.pe/prod' });
+const httpLink = new HttpLink({ uri: 'https://back.samsung.com.pe/prod' });
 // TEST
-const httpLink = new HttpLink({ uri: 'https://back.samsung.com.pe/test' });
+// const httpLink = new HttpLink({ uri: 'https://back.samsung.com.pe/test' });
 
 const authLink = new ApolloLink((operation, forward) => {
   const token = localStorage.getItem('auth_token');

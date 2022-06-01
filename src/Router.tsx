@@ -29,6 +29,7 @@ const Router:FC = () => {
                 <Route path="/bespoke-registro" element={<BeSpokeRegistro />} />
                 <Route path="/bespoke" element={<BeSpokeapr22 />} />
                 <Route path="/bespoke-falabella" element={<BespokeFalabella />} />
+                <Route path="*" element={<PremiumService />} />
             </Routes>
 
         </BrowserRouter>

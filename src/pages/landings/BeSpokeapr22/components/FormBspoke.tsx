@@ -3,7 +3,6 @@ import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { CREATE_BESPOKE } from "../../../../graphql/BeSpoke";
 import { useMutation } from "@apollo/client";
-import { delay } from "../../../../utils/delay";
 import {
   FormikTextInput,
   InformationCheckBox,
