@@ -10,6 +10,7 @@ export interface feature{
     description: string;
     img: string;
     alt: string;
+    info?: string;
 }
 
 export interface simpleCard{

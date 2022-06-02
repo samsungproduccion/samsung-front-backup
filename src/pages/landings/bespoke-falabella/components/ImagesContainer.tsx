@@ -1,3 +1,9 @@
+import carousel_1 from '../../../../assets/images/bespoke-falabella/carousel-1.jpg'; 
+import grid_1 from '../../../../assets/images/bespoke-falabella/grid-1.jpg'; 
+import grid_2 from '../../../../assets/images/bespoke-falabella/grid-2.jpg';
+import grid_3 from '../../../../assets/images/bespoke-falabella/grid-3.jpg';
+import grid_4 from '../../../../assets/images/bespoke-falabella/grid-4.jpg';
+import grid_5 from '../../../../assets/images/bespoke-falabella/grid-5.jpg';
 const ImagesContainer = () => {
   return (
     <div className="images-container section">
@@ -9,38 +15,38 @@ const ImagesContainer = () => {
         <div className="content-imgGrande">
           <img
             className="imgGrande"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0wVYysD2-Eb73N-hq-vrvXUBegsGRKjTo7w&usqp=CAU"
+            src={carousel_1}
             alt=""
           />
         </div>
         <div className="grid">
           <div>
             <img
-              src="https://www.redbionova.com/wp-content/uploads/2018/11/rickmorty.jpg"
+              src={grid_1}
               alt=""
             />
           </div>
           <div>
             <img
-              src="https://gcdn.lanetaneta.com/wp-content/uploads/2021/09/Mejores-programas-como-Rick-Morty-en-Netflix.jpg"
+              src={grid_2}
               alt=""
             />
           </div>
           <div>
             <img
-              src="https://img.europapress.es/fotoweb/fotonoticia_20210620111333_1200.jpg"
+              src={grid_3}
               alt=""
             />
           </div>
           <div>
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdxm_OwzvaAQrRJsCXt1UNy26EN7mnI8URFnVXhBBoHIOdOOwxBNmAPQeETihNLVfJtY4&usqp=CAU"
+              src={grid_4}
               alt=""
             />
           </div>
           <div>
             <img
-              src="https://static2.abc.es/media/play/2017/09/28/rick-morty-kaJC--620x349@abc.jpg"
+              src={grid_5}
               alt=""
             />
           </div>

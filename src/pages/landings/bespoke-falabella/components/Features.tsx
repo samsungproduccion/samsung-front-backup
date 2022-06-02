@@ -15,14 +15,19 @@ const Features = () => {
             {feature_list? 
                 feature_list.map((feature, i) =>(
                     <div key={i} className="feature">
+                        <div className="image">
+                            <img src={feature.img} alt={feature.alt} />
+                        </div>
                         <div className="info">
                             <h4 className="feature-title">{feature.title}</h4>
                             <p className="feature-description">
                                 {feature.description}
                             </p>
-                        </div>
-                        <div className="image">
-                            <img src={feature.img} alt={feature.alt} />
+                            {
+                                feature.info ?
+                                    <p className="additional-info">{feature.info}</p>
+                                :null
+                            }
                         </div>
                     </div>
                 ))
