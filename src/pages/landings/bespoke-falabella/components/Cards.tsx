@@ -18,7 +18,7 @@ const Cards = () => {
                         </div>
                         <div className="card-info">
                             <h4 className="card-title">{card.title}</h4>
-                            <a className="card-button" href={card.url}>COMPRA AQUÍ</a>
+                            <a className="card-button" href={card.url} target="_blank" >COMPRA AQUÍ</a>
                         </div>
                     </div>
                 ))
