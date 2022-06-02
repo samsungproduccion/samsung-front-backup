@@ -63,77 +63,602 @@
         font-family: SamsungSharpSans, Arial;
       }
     }
-    .grid {
-      display: grid;
-      height: 100%;
-      gap: 15px;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(6, 1fr);
+    .content {
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+    }
+    .content .content-imgGrande {
+      width: 90%;
+      margin: 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+    }
 
-      .img1 {
-        grid-column: 1/3;
-        grid-row: 1/5;
+    .content .imgGrande {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0px);
+      animation: dash 1.5s linear infinite;
+      transition: all 0.1s ease-out 0s;
+      animation-delay: 1s;
+      animation-duration: 10s;
+    }
+    @keyframes dash {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
       }
-      .img2 {
-        grid-column: 3/5;
-        grid-row: 1/3;
+
+      9% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
       }
-      .img3 {
-        grid-column: 5/8;
-        grid-row: 1/3;
+
+      10% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
       }
-      .img4 {
-        grid-column: 1/3;
-        grid-row: 5/8;
+
+      20% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
       }
-      .img5 {
-        grid-column: 3/8;
-        grid-row: 3/8;
+      30% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
       }
-      img {
-        width: 100%;
-        height: 100%;
-        transition: all 0.2s ease-out 0s;
+      40% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
       }
-      div {
-        overflow: hidden;
+      50% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
       }
-      div:hover {
-        img {
-          transform: scale(1.1);
-        }
+      60% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+      70% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+      80% {
+        display: initial;
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+
+      85% {
+        display: initial;
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+
+      90% {
+        display: initial;
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+
+      100% {
+        display: initial;
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
       }
     }
-    .infor {
-      margin-top: 10px;
-      background-color: #284668;
-      height: 500px;
-      display: flex;
-      .show-image {
-        width: 50%;
-        padding: 50px;
-        display: flex;
-        align-content: center;
-        align-items: center;
-        img {
-          width: 100%;
-        }
-      }
-      .desc {
-        width: 50%;
-        color: white;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        .title {
-          font-size: 50px;
-          padding-bottom: 50px;
-        }
-        .description {
-          font-size: 40px;
-        }
+    .content .grid {
+      display: grid;
+      position: absolute;
+      width: 90%;
+      height: 100%;
+      gap: 20px;
+      overflow: hidden;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    .content .grid img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .content .grid div {
+      overflow: hidden;
+      border-radius: 15px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .content .grid div:nth-child(1) {
+      grid-column: 1/3;
+      grid-row: 1/5;
+    }
+
+    .content .grid div:nth-child(2) {
+      grid-column: 3/8;
+      grid-row: 3/8;
+    }
+
+    .content .grid div:nth-child(3) {
+      grid-column: 3/5;
+      grid-row: 1/3;
+    }
+
+    .content .grid div:nth-child(4) {
+      grid-column: 1/3;
+      grid-row: 5/8;
+    }
+
+    .content .grid div:nth-child(5) {
+      grid-column: 5/8;
+      grid-row: 1/3;
+    }
+
+    .content .grid div:nth-child(1) img {
+      opacity: 0;
+      transform: scale(1.2);
+      filter: blur(6px);
+      animation: img1 1.5s linear infinite;
+      transition: all 0.1s ease-out 0s;
+      animation-delay: 1s;
+      animation-duration: 10s;
+    }
+
+    .content .grid div:nth-child(2) img {
+      opacity: 0;
+      transform: scale(1.2);
+      filter: blur(6px);
+      animation: img2 1.5s linear infinite;
+      transition: all 0.1s ease-out 0s;
+      animation-delay: 1s;
+      animation-duration: 10s;
+    }
+
+    .content .grid div:nth-child(3) img {
+      opacity: 0;
+      transform: scale(1.2);
+      filter: blur(6px);
+      animation: img3 1.5s linear infinite;
+      transition: all 0.1s ease-out 0s;
+      animation-delay: 1s;
+      animation-duration: 10s;
+    }
+
+    .content .grid div:nth-child(4) img {
+      opacity: 0;
+      transform: scale(1.2);
+      filter: blur(6px);
+      animation: img4 1.5s linear infinite;
+      transition: all 0.1s ease-out 0s;
+      animation-delay: 1s;
+      animation-duration: 10s;
+    }
+
+    .content .grid div:nth-child(5) img {
+      opacity: 0;
+      transform: scale(1.2);
+      filter: blur(6px);
+      animation: img5 1.5s linear infinite;
+      transition: all 0.1s ease-out 0s;
+      animation-delay: 1s;
+      animation-duration: 10s;
+    }
+
+    @keyframes img1 {
+      0% {
+        overflow: hidden;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      9% {
+        overflow: hidden;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      10% {
+        overflow: hidden;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      20% {
+        overflow: hidden;
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      30% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      40% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      80% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      90% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      100% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+    }
+
+    @keyframes img2 {
+      0% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      9% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      10% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      20% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      30% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      40% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      80% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      90% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      100% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+    }
+
+    @keyframes img3 {
+      0% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      9% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      10% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      20% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      25% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      30% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      40% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      80% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      90% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      100% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+    }
+
+    @keyframes img4 {
+      0% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      9% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      10% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      20% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      25% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      30% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+      40% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      80% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      90% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      100% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+    }
+
+    @keyframes img5 {
+      0% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      9% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      10% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      20% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      25% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      30% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      35% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      40% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      80% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      90% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
+      }
+
+      100% {
+        display: none;
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(6px);
       }
     }
   }
@@ -152,12 +677,11 @@
         font-weight: normal;
         text-align: center;
         font-size: 25px;
-        
       }
     }
     .feature-list {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
       padding-bottom: 20px;
       .feature {
@@ -166,6 +690,9 @@
         align-items: center;
         justify-content: center;
         // width: 40%;
+        background-color: #e8e8e8;
+        border-radius: 15px;
+        padding: 10px;
         .info {
           width: 60%;
           padding: 10px;
@@ -203,7 +730,6 @@
     .cards-head {
       // font-family: SamsungSharpSans, Arial;
       p {
-        
         text-align: center;
         font-size: 60px;
         font-weight: bold;
@@ -212,7 +738,6 @@
       }
       span {
         font-weight: normal;
-        
       }
       .phrase {
         font-size: 30px;
@@ -314,17 +839,19 @@
 
     .images-container {
       padding: 0 10px;
-      .title{
-        .primary{
+      .title {
+        .primary {
           font-size: 40px;
         }
       }
+
       .grid {
         display: flex;
         flex-direction: column;
         margin: 0;
         div {
           overflow: unset;
+          border-radius: 15px;
           img {
             width: 100%;
             height: auto;
@@ -357,6 +884,26 @@
           }
         }
       }
+      .content{
+        gap: 20px
+      }
+      .content .content-imgGrande img{
+        display: flex;
+        animation: none;
+    }
+
+    .content .grid {
+        position: initial;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content .grid div img{
+        animation: none !important;
+        opacity: 1 !important;
+        filter: blur(0px) !important;
+        transform: scale(1) !important;
+    }
     }
 
     .features {
@@ -392,11 +939,11 @@
     }
 
     .card-container {
-      .cards-head{
-        p{
+      .cards-head {
+        p {
           font-size: 40px;
         }
-        .phrase{
+        .phrase {
           font-size: 20px;
         }
       }
