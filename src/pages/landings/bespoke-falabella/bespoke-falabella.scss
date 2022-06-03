@@ -46,8 +46,8 @@
       }
     }
     .video-box {
-      height: 400px;
-      width: 600px;
+      height: 500px;
+      width: 800px;
       margin: 0 auto;
     }
   }
@@ -81,7 +81,7 @@
 
     .content .imgGrande {
       width: 100%;
-      height: auto;
+      height: 700px;
       border-radius: 15px;
       opacity: 1;
       transform: scale(1);
@@ -90,6 +90,9 @@
       transition: all 0.1s ease-out 0s;
       animation-delay: 1s;
       animation-duration: 10s;
+      img{
+        height: 700px!important;
+      }
     }
     @keyframes dash {
       0% {
@@ -905,6 +908,7 @@
       .content .content-imgGrande img{
         display: flex;
         animation: none;
+        
     }
 
     .content .grid {
