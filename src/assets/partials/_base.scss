@@ -3756,3 +3756,16 @@ html[lang^="th"] [data-font-size-pc="12"] {
 	border: 2px solid red!important;
 	animation: scale-animation .2s 1;
 }
+
+@font-face {
+  font-family: "SamsungSharpSans-MD";
+  src: url("../fonts/SamsungSharpSans-Medium.woff");
+}
+@font-face {
+  font-family: "SamsungSharpSans";
+  src: url("../fonts/samsungsharpsans.otf");
+}
+@font-face {
+  font-family: "SamsungSharpSans-BD";
+  src: url("../fonts/SamsungSharpSansBd.woff");
+}
