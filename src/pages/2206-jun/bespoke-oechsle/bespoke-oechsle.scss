@@ -844,9 +844,10 @@
       .title {
         p {
           font-size: 60px;
+          line-height: unset;
         }
         .phrase {
-          font-size: 50px;
+          font-size: 20px;
           margin-bottom: 10px;
         }
       }
@@ -933,7 +934,7 @@
       .title {
         padding: 0 10px;
         .primary {
-          font-size: 35px;
+          font-size: 40px;
         }
         .secundary {
           font-size: 20px;
