@@ -5,8 +5,7 @@ export const validationForm = Yup.object({
   voucher: Yup.string()
         .required("El N° de voucher es obligatorio"),
   name: Yup.string()
-    .required("El nombre es obligatorio")
-    .min(5, "El nombre debe tener al menos 5 caracteres"),
+    .required("El nombre es obligatorio"),
   lastname: Yup.string().required("El apellido es obligatorio"),
   email: Yup.string()
     .required("El email es obligatorio")

@@ -1,9 +1,9 @@
-import carousel_1 from '../../../../assets/images/bespoke-falabella/carousel-1.jpg'; 
-import grid_1 from '../../../../assets/images/bespoke-falabella/grid-1.jpg'; 
-import grid_2 from '../../../../assets/images/bespoke-falabella/grid-2.jpg';
-import grid_3 from '../../../../assets/images/bespoke-falabella/grid-3.jpg';
-import grid_4 from '../../../../assets/images/bespoke-falabella/grid-4.jpg';
-import grid_5 from '../../../../assets/images/bespoke-falabella/grid-5.jpg';
+import carousel_1 from "../../../../assets/images/bespoke-falabella/carousel-1.jpg";
+import grid_1 from "../../../../assets/images/bespoke-falabella/grid-1.jpg";
+import grid_2 from "../../../../assets/images/bespoke-falabella/grid-2.jpg";
+import grid_3 from "../../../../assets/images/bespoke-falabella/grid-3.jpg";
+import grid_4 from "../../../../assets/images/bespoke-falabella/grid-4.jpg";
+import grid_5 from "../../../../assets/images/bespoke-falabella/grid-6.jpg";
 const ImagesContainer = () => {
   return (
     <div className="images-container section">
@@ -13,42 +13,23 @@ const ImagesContainer = () => {
 
       <div className="content">
         <div className="content-imgGrande">
-          <img
-            className="imgGrande"
-            src={carousel_1}
-            alt=""
-          />
+          <img className="imgGrande" src={carousel_1} alt="" />
         </div>
         <div className="grid">
           <div>
-            <img
-              src={grid_1}
-              alt=""
-            />
+            <img src={grid_1} alt="Grid 1" />
           </div>
           <div>
-            <img
-              src={grid_2}
-              alt=""
-            />
+            <img src={grid_2} alt="Grid 2" />
           </div>
           <div>
-            <img
-              src={grid_3}
-              alt=""
-            />
+            <img src={grid_3} alt="Grid 3" />
           </div>
           <div>
-            <img
-              src={grid_4}
-              alt=""
-            />
+            <img src={grid_4} alt="Grid 4" />
           </div>
           <div>
-            <img
-              src={grid_5}
-              alt=""
-            />
+            <img src={grid_5} alt="Grid 5" />
           </div>
         </div>
       </div>

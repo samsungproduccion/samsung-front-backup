@@ -3,8 +3,7 @@ import { isNumber } from '../../../../utils/isNumber';
 
 export const validationForm = Yup.object({
     name: Yup.string()
-      .required("El nombre es obligatorio")
-      .min(5, "El nombre debe tener al menos 5 caracteres"),
+      .required("El nombre es obligatorio"),
     lastname: Yup.string().required("El apellido es obligatorio"),
     email: Yup.string()
       .required("El email es obligatorio")
