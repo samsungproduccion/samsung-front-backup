@@ -52,7 +52,7 @@ export const FormikSelectInput = ({ label, ...props }: InputType2) => {
   );
 };
 
-export const PrivacyCheckBox = ({ label, ...props }: InputType2) => {
+export const TermsCheckBox = ({ label, ...props }: InputType2) => {
   const [field, meta] = useField({ ...props, type: "checkbox" });
 
   return (
@@ -83,7 +83,7 @@ export const PrivacyCheckBox = ({ label, ...props }: InputType2) => {
    
   );
 };
-export const TermsCheckBox = ({ label, ...props }: InputType2) => {
+export const PrivacyCheckBox = ({ label, ...props }: InputType2) => {
   const [field, meta] = useField({ ...props, type: "checkbox" });
 
   return (

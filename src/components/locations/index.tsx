@@ -5,11 +5,11 @@ import {
   cities,
   districts,
   getState,
-  getCity,
-  getDistrict,
+  getCity
 } from "../../utils/locations";
 
-const Locations = () => {
+
+const Locations = ({stateName='state', cityName='city', districtName='district'}) => {
   const formik = useFormikContext<any>();
 
   const [state, setState] = useState("");
@@ -43,12 +43,12 @@ const Locations = () => {
   return (
     <>
       <div className="ch-ff__field">
-        <label htmlFor="state">Departamento (*)</label>
+        <label htmlFor={stateName}>Departamento (*)</label>
         <Field
           as="select"
           label="Departamento"
-          name="state"
-          id="state"
+          name={stateName}
+          id={stateName}
           onChange={cambiarEstados}
         >
           <option value="">Selecciona</option>
@@ -60,11 +60,11 @@ const Locations = () => {
               ))
             : null}
         </Field>
-        <ErrorMessage name="state" component="p" className="input---error" />
+        <ErrorMessage name={stateName} component="p" className="input---error" />
       </div>
       <div className="ch-ff__field">
-        <label htmlFor="city">Provincia (*)</label>
-        <Field as="select" id="city" name="city" onChange={cambiarCiudades}>
+        <label htmlFor={cityName}>Provincia (*)</label>
+        <Field as="select" id={cityName} name={cityName} onChange={cambiarCiudades}>
           <option value="">Selecciona</option>
           {cities.map((city, index) => {
             if (city.id_state === state) {
@@ -78,11 +78,11 @@ const Locations = () => {
             }
           })}
         </Field>
-        <ErrorMessage name="city" component="p" className="input---error" />
+        <ErrorMessage name={cityName} component="p" className="input---error" />
       </div>
       <div className="ch-ff__field">
-        <label htmlFor="district">Distrito (*)</label>
-        <Field as="select" name="district" id="district">
+        <label htmlFor={districtName}>Distrito (*)</label>
+        <Field as="select" name={districtName} id={districtName}>
           <option value="">Selecciona</option>
           {districts.map((district, index) => {
             if (district.codeCity === city && district.codeState === state) {
@@ -96,7 +96,7 @@ const Locations = () => {
             }
           })}
         </Field>
-        <ErrorMessage name="district" component="p" className="input---error" />
+        <ErrorMessage name={districtName} component="p" className="input---error" />
       </div>
     </>
   );
