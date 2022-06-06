@@ -5,6 +5,7 @@ import {
     Route,
     // HashRouter
 } from "react-router-dom";
+import BespokeOechsle from "./pages/2206-jun/bespoke-oechsle";
 import BespokeFalabella from "./pages/landings/bespoke-falabella";
 import BeSpokeRegistro from "./pages/landings/bespoke-registrom0522";
 import BeSpokeapr22 from "./pages/landings/BeSpokeapr22";
@@ -29,6 +30,7 @@ const Router:FC = () => {
                 <Route path="/bespoke-registro" element={<BeSpokeRegistro />} />
                 <Route path="/bespoke" element={<BeSpokeapr22 />} />
                 <Route path="/bespoke-falabella" element={<BespokeFalabella />} />
+                <Route path="/bespoke-oechsle" element={<BespokeOechsle />} />
                 <Route path="*" element={<PremiumService />} />
             </Routes>
 
