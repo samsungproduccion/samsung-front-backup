@@ -5,10 +5,10 @@ import {
     Route,
     // HashRouter
 } from "react-router-dom";
+import BeSpokeapr22 from "./pages/landings/BeSpokeapr22";
 import BespokeOechsle from "./pages/2206-jun/bespoke-oechsle";
 import BespokeFalabella from "./pages/landings/bespoke-falabella";
 import BeSpokeRegistro from "./pages/landings/bespoke-registrom0522";
-import BeSpokeapr22 from "./pages/landings/BeSpokeapr22";
 import PremiumService from "./pages/landings/premium-service20abr22";
 import ThankBespoke from "./pages/landings/thankyou/ThankBespoke";
 import ThanksBespokeRegistro from "./pages/landings/thankyou/ThankBespokeRegistro";

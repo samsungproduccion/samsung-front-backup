@@ -1,5 +1,5 @@
 
-import banner from "../../../../assets/images/bespoke/main-banner-desktop.gif";
+import banner from "../../../../assets/images/bespoke/main-banner-desktop2.gif";
 import banner_mobile from "../../../../assets/images/bespoke/main-banner-mobile.gif";
 import { useDevice } from "../../../../hooks/useDevice";
 
