@@ -1,6 +1,7 @@
 import { cardItem } from "../includes/cards";
 
 const Cards = () => {
+    
    
   return(
     <div className="card-container">
