@@ -87,7 +87,7 @@ const FormComplaintsBook = () => {
                 </label>
               </div>
             </div>
-            {age ? <TutorInfo age={age} /> : null}
+            <TutorInfo age={age} />
             <PurchaseInfo />
             <ComplainInfo />
 

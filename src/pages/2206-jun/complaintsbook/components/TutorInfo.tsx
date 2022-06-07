@@ -6,7 +6,7 @@ interface Props{
 }
 const TutorInfo = ({age}: Props) => {
   return (
-    <div className={age ? "form-section" : "form-section dnone" }>
+    <div className={age ? "form-section" : "form-section novisible" }>
       <div className="section-title">
         <h2>Datos del padre/madre/tutor</h2>
       </div>
