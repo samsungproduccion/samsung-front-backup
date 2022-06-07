@@ -3,6 +3,21 @@
   margin: 0 auto;
   max-width: 1500px;
 
+  input{
+    border: 1px solid #ada8a8!important;
+    border-radius: 3px!important;
+  }
+  select{
+    border: 1px solid #ada8a8!important;
+    border-radius: 3px!important;
+  }
+  textarea{
+    border: 1px solid #ada8a8!important;
+    border-radius: 3px!important;
+    resize: none;
+    outline: none;
+    padding: 20px;
+  }
   .main-title{
     margin: 50px auto;
     font-size: 40px;
@@ -18,9 +33,14 @@
     border-top: 9px solid #000;
     box-shadow: 0 17px 41px rgba(0,0,0,.2);
     height: calc(100% - 39px);
-    padding: 20px 20px;
+    padding: 20px 50px;
     margin-bottom: 20px;
     // height: 700px;
+
+    .form-section{
+      margin-bottom: 30px;
+    }
+
     .section-title{
       margin-bottom: 20px;
       h2{
@@ -38,15 +58,59 @@
       div{
         width: 100%;
       }
-      input{
-        border: 1px solid #d9d9d9;
-        border-radius: 3px;
+      
+    }
+
+    .twice-row{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+      div{
+        width: 100%;
       }
-      select{
-        border: 1px solid #d9d9d9;
-        border-radius: 3px;
+    }
+    .area-container{
+      div{
+        width: 100%;
+      }
+    }
+
+    .ch-btn{
+      border-radius: 50px!important;
+    }
+
+    .form-footer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .checkboxes{
+        margin-top: 20px;
+        div{
+          width: unset;
+        }
+      }
+      .button--container{
+        margin-top: 20px;
+        width: 300px;
       }
     }
   }
   
+}
+
+@media screen and (max-width: 858px) {
+  .main--container--complaintsbook{
+    .form-complaints-book{
+      padding: 10px 20px;
+      .section-title{
+        h2{
+          font-size: 30px;
+        }
+      }
+      .input--container, .twice-row{
+        gap: 0px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
 }

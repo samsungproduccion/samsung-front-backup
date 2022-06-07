@@ -23,7 +23,9 @@
     "react": "^17.0.2",
     "react-apollo": "^3.1.5",
     "react-content-loader": "^6.2.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^17.0.2",
+    "react-flatpickr": "^3.10.12",
     "react-google-recaptcha": "^2.1.0",
     "react-gtm-module": "^2.0.11",
     "react-helmet": "^6.1.0",
@@ -67,6 +69,8 @@
     ]
   },
   "devDependencies": {
+    "@types/react-datepicker": "^4.4.2",
+    "@types/react-flatpickr": "^3.8.7",
     "@types/react-google-recaptcha": "^2.1.5",
     "@types/react-gtm-module": "^2.0.1",
     "@types/react-helmet": "^6.1.5",

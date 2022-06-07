@@ -1,47 +1,34 @@
-import { Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { CREATE_BESPOKE } from "../../../../graphql/BeSpoke";
 import { useMutation } from "@apollo/client";
-import {
-  FormikTextInput,
-  InformationCheckBox,
-  PrivacyCheckBox,
-  TermsCheckBox,
-} from "../../../../components/forms_v2/Inputs";
+import { PrivacyCheckBox } from "../../../../components/forms_v2/Inputs";
 import SubmitButton from "../../../../components/forms_v2/Submit";
 import { validationForm } from "../includes/validationForm";
-import Locations from "../../../../components/locations";
 import PersonalInfo from "./PersonalInfo";
 import PurchaseInfo from "./PurchaseInfo";
 import ComplainInfo from "./ComplainInfo";
+import { UploadFile } from "../../../../utils/uploadFile";
+import { iniValues } from "../includes/initialValues";
+import TutorInfo from "./TutorInfo";
 
 const FormComplaintsBook = () => {
   const [loading, setLoading] = useState(false);
   const recaptcha = useRef<any>(null);
   const imageRef = useRef<any>(null);
+  const [age, setAge] = useState(false);
   const [errorImagen, setErrorImagen] = useState(false);
+
+  // console.log(age)
 
   return (
     <div className="form-complaints-book">
       <Formik
-        initialValues={{
-          voucher: "",
-          name: "",
-          lastname: "",
-          email: "",
-          dni: "",
-          phone: "",
-          terms: false,
-          privacy: false,
-          marketingOption: false,
-          state: "",
-          city: "",
-          district: "",
-        }}
+        initialValues={iniValues}
         validationSchema={validationForm}
         onSubmit={async (values, { resetForm }) => {
-          // // return console.log(values);
+          console.log(values);
           // setLoading(true);
           // const { imagenUrl, uploadError } = await UploadFile(
           //   imageRef.current.files
@@ -73,7 +60,7 @@ const FormComplaintsBook = () => {
           //   setLoading(false);
           // }
           // console.log({ ...values, image: imagenUrl, art: art.name });
-          // setLoading(false);
+          setLoading(false);
         }}
       >
         {(formik) => (
@@ -85,13 +72,36 @@ const FormComplaintsBook = () => {
               ref={recaptcha}
             />
             <PersonalInfo />
+            <div className="age-container" style={{marginBottom: '30px'}}>
+              <div className="ch-ff__field ch-ff__field--inline false">
+                <label htmlFor="underAge" className="checkbox">
+                  <div>¿Eres menor de edad?</div>
+                  <input
+                    type="checkbox"
+                    id="underAge"
+                    name="underAge"
+                    checked={age}
+                    onChange={() => setAge(!age)}
+                  />
+                  <span className="mark"></span>
+                </label>
+              </div>
+            </div>
+            {
+              age ? <TutorInfo /> : null
+            }
             <PurchaseInfo />
             <ComplainInfo />
-            
-            <div className="checkboxes">
-              <PrivacyCheckBox label="PrivacyPolicy" name="termsprivacy" />
+
+            <div className="form-footer">
+              <div className="checkboxes">
+                <PrivacyCheckBox
+                  label="PrivacyPolicy"
+                  name="acceptedPrivacyPolicy"
+                />
+              </div>
+              <SubmitButton loading={loading} value={"ENVIAR"} />
             </div>
-            <SubmitButton loading={loading} value={"ENVIAR"} />
           </Form>
         )}
       </Formik>

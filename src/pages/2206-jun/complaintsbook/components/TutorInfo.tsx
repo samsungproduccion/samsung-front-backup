@@ -1,36 +1,36 @@
 import { FormikTextInput } from "../../../../components/forms_v2/Inputs";
 import Locations from "../../../../components/locations";
 
-const PersonalInfo = () => {
+const TutorInfo = () => {
   return (
     <div className="form-section">
       <div className="section-title">
-        <h2>Datos Personales</h2>
+        <h2>Datos del padre/madre/tutor</h2>
       </div>
       <div className="input--container">
-        <FormikTextInput label="Nombre (*)" name="firstName" type="text" />
+        <FormikTextInput label="Nombre (*)" name="tutorFirstName" type="text" />
 
-        <FormikTextInput label="Apellidos (*)" name="lastName" type="text" />
+        <FormikTextInput label="Apellidos (*)" name="tutorLastName" type="text" />
         <FormikTextInput
           label="DNI / Carnet de extranjería (*)"
-          name="nationalId"
+          name="tutorNationalId"
           type="text"
         />
         <FormikTextInput
           label="Correo Electrónico (*)"
-          name="email"
+          name="tutorEmail"
           type="text"
         />
         <FormikTextInput
           label="Número de contacto (*)"
-          name="phone"
+          name="tutorPhone"
           type="text"
         />
-        <FormikTextInput label="Domicilio (*)" name="address" type="text" />
-        <Locations />
+        <FormikTextInput label="Domicilio (*)" name="tutorAddress" type="text" />
+        <Locations stateName="tutorState" cityName="tutorCity" districtName="tutorDistrict" />
       </div>
     </div>
   );
 };
 
-export default PersonalInfo;
+export default TutorInfo;

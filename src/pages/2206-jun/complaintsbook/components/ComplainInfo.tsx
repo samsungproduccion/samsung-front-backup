@@ -1,35 +1,39 @@
-import { FormikTextInput } from "../../../../components/forms_v2/Inputs";
+import {
+  FormikAreaInput
+} from "../../../../components/forms_v2/Inputs";
 
 const ComplainInfo = () => {
-
-  return(
+  return (
     <div className="form-section">
       <div className="section-title">
-        <h2>Datos Personales</h2>
+        <h2>Detalla tu reclamo o queja</h2>
       </div>
-      <div className="input--container">
-        <FormikTextInput label="Nombre (*)" name="name" type="text" />
+      <div className="twice-row">
+        <FormikAreaInput
+          label="Detalle del reclamo"
+          name="claimDetail"
+          rows="5"
+          placeholder="Disconformidad relacionada al producto o servicio adquirido."
+        />
 
-        <FormikTextInput label="Apellidos (*)" name="lastname" type="text" />
-        <FormikTextInput
-          label="DNI / Carnet de extranjería (*)"
-          name="dni"
-          type="text"
+        <FormikAreaInput
+          label="Detalle de la queja"
+          name="complainDetail"
+          rows="5"
+          placeholder="Malestar o descontento con respecto a la atención brindada."
         />
-        <FormikTextInput
-          label="Correo Electrónico (*)"
-          name="email"
-          type="text"
+      </div>
+      <div className="area-container">
+        <FormikAreaInput
+          label="Pedido o compensación solicitada (*)"
+          name="customerOrder"
+          rows="5"
+          placeholder="¿Cómo deseas que resolvamos tu reclamo o queja?"
+          aria-invalid="true"
         />
-        <FormikTextInput
-          label="Número de contacto (*)"
-          name="phone"
-          type="text"
-        />
-        <FormikTextInput label="Domicilio (*)" name="voucher" type="text" />
       </div>
     </div>
   );
-}
+};
 
 export default ComplainInfo;

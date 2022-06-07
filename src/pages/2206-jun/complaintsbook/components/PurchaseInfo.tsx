@@ -1,35 +1,41 @@
-import { FormikTextInput } from "../../../../components/forms_v2/Inputs";
+import {
+  FormikAreaInput,
+  FormikDatePicker,
+  FormikSelectInput,
+  FormikTextInput,
+} from "../../../../components/forms_v2/Inputs";
 
 const PurchaseInfo = () => {
-
-  return(
+  return (
     <div className="form-section">
       <div className="section-title">
-        <h2>Datos Personales</h2>
+        <h2>Registra información de tu compra</h2>
       </div>
-      <div className="input--container">
-        <FormikTextInput label="Nombre (*)" name="name" type="text" />
+      <div className="twice-row">
+        <FormikTextInput label="Número de pedido (*)" name="orderNumber" type="text" />
 
-        <FormikTextInput label="Apellidos (*)" name="lastname" type="text" />
-        <FormikTextInput
-          label="DNI / Carnet de extranjería (*)"
-          name="dni"
-          type="text"
+        <FormikSelectInput label="Bien adquirido (*)" name="adquiredGood">
+          <option value="">Selecciona</option>
+          <option value="producto">Producto</option>
+          <option value="servicio">Servicio</option>
+        </FormikSelectInput>
+      </div>
+      <div className="area-container">
+        <FormikAreaInput
+          label="Descripción del producto o servicio"
+          name="adquiredDescription"
+          rows="5"
+          aria-invalid="true"
         />
-        <FormikTextInput
-          label="Correo Electrónico (*)"
-          name="email"
-          type="text"
-        />
-        <FormikTextInput
-          label="Número de contacto (*)"
-          name="phone"
-          type="text"
-        />
-        <FormikTextInput label="Domicilio (*)" name="voucher" type="text" />
+
+      </div>
+      <div className="twice-row">
+        <FormikTextInput label="Monto reclamado (*)" name="reclaimedAmount" type="text" />
+
+        <FormikDatePicker label="Fecha de compra (*)" name="datePurchased" type="text" />
       </div>
     </div>
   );
-}
+};
 
 export default PurchaseInfo;
