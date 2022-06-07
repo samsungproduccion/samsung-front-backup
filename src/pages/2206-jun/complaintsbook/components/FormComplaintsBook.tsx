@@ -5,7 +5,7 @@ import { CREATE_BESPOKE } from "../../../../graphql/BeSpoke";
 import { useMutation } from "@apollo/client";
 import { PrivacyCheckBox } from "../../../../components/forms_v2/Inputs";
 import SubmitButton from "../../../../components/forms_v2/Submit";
-import { validationForm } from "../includes/validationForm";
+import { validationForm, validationForm2 } from "../includes/validationForm";
 import PersonalInfo from "./PersonalInfo";
 import PurchaseInfo from "./PurchaseInfo";
 import ComplainInfo from "./ComplainInfo";
@@ -20,13 +20,14 @@ const FormComplaintsBook = () => {
   const [age, setAge] = useState(false);
   const [errorImagen, setErrorImagen] = useState(false);
 
+
   // console.log(age)
 
   return (
     <div className="form-complaints-book">
       <Formik
         initialValues={iniValues}
-        validationSchema={validationForm}
+        validationSchema={age ? validationForm2 : validationForm}
         onSubmit={async (values, { resetForm }) => {
           console.log(values);
           // setLoading(true);

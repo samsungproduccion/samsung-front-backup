@@ -40,6 +40,13 @@
     .form-section{
       margin-bottom: 30px;
     }
+    .form-section2{
+      margin-bottom: 30px;
+      transition: all 0.5s ease-out 0s;
+      // height: 462px;
+      -webkit-transition: all 0.5s ease-out 0s;
+      // overflow: hidden;
+    }
 
     .section-title{
       margin-bottom: 20px;
@@ -83,6 +90,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 20px;
       .checkboxes{
         margin-top: 20px;
         div{
@@ -105,7 +113,11 @@
     }
 
     .novisible{
-      display: none;
+      height: 0px !important;
+      overflow: hidden;
+      margin: 0;
+      transition: all 0.5s ease-out 0s;
+      -webkit-transition: all 0.5s ease-out 0s
       
     }
   }
@@ -116,6 +128,10 @@
   .main--container--complaintsbook{
     .form-complaints-book{
       padding: 10px 20px;
+
+      .form-section2{
+        // height: 1030px;
+      }
       .section-title{
         h2{
           font-size: 30px;
@@ -124,6 +140,12 @@
       .input--container, .twice-row{
         gap: 0px;
         grid-template-columns: repeat(1, 1fr);
+      }
+      .form-footer{
+        .captcha-info{
+          width: 80%;
+          font-size: 10px;
+        }
       }
     }
   }

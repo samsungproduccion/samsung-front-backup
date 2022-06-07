@@ -17,6 +17,14 @@ interface InputType2 {
   [x: string]: any;
 }
 
+interface InputType3 {
+  label: string;
+  name: string;
+  placeholder?: string;
+  url?: string;
+  [x: string]: any;
+}
+
 export const FormikTextInput = ({ label, ...props }: InputType1) => {
   const [field] = useField(props);
 
@@ -141,7 +149,7 @@ export const FormikDatePicker = ({ label, ...props }: InputType2) => {
   );
 };
 
-export const TermsCheckBox = ({ label, ...props }: InputType2) => {
+export const TermsCheckBox = ({ label, url='https://samsung.com.pe', ...props }: InputType3) => {
   const [field, meta] = useField({ ...props, type: "checkbox" });
 
   return (
@@ -150,7 +158,7 @@ export const TermsCheckBox = ({ label, ...props }: InputType2) => {
         <div>
           Acepto los{" "}
           <a
-            href="https://res.cloudinary.com/cheil-peru/image/upload/v1651515535/tyc/Terminos_y_Condiciones_BeSpoke_REF_Pre-registro_VF_khctko.pdf"
+            href={url}
             className="ch-link"
             target="_blank"
             rel="noreferrer"
@@ -174,7 +182,7 @@ export const TermsCheckBox = ({ label, ...props }: InputType2) => {
     </div>
   );
 };
-export const PrivacyCheckBox = ({ label, ...props }: InputType2) => {
+export const PrivacyCheckBox = ({ label,url="https://www.samsung.com/pe/info/privacy/", ...props }: InputType3) => {
   const [field, meta] = useField({ ...props, type: "checkbox" });
 
   return (
@@ -183,7 +191,7 @@ export const PrivacyCheckBox = ({ label, ...props }: InputType2) => {
         <div>
           Acepto la{" "}
           <a
-            href="https://www.samsung.com/pe/info/privacy/"
+            href={url}
             className="ch-link"
             target="_blank"
             rel="noreferrer"

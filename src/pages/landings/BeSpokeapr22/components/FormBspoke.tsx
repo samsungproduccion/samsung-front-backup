@@ -88,7 +88,7 @@ const FormBspoke = () => {
               <div></div>
 
               <PrivacyCheckBox label="PrivacyPolicy" name="privacy" />
-              <TermsCheckBox label="Terms and Conditions" name="terms" />
+              <TermsCheckBox label="Terms and Conditions" name="terms" url="https://res.cloudinary.com/cheil-peru/image/upload/v1654637343/tyc/Terminos_y_Condiciones_BeSpoke_REF_Pre-registro_V3_bbktpy.pdf" />
               <InformationCheckBox
                 label="Deseo recibir información de Samsung"
                 name="info"

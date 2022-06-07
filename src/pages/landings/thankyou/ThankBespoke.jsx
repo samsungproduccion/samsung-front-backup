@@ -28,7 +28,7 @@ const ThankBespoke = ()=>{
             <div className='divMsj'>
                 <h1>¡Gracias por registrarte!</h1>
                 <h2>Tus datos han sido enviados con éxito, estate muy atento a tu correo electrónico que muy pronto te
-                enviaremos información sobre la preventa del BeSpoke y acceder a beneficios insuperables.</h2>
+                enviaremos información sobre la preventa del Bespoke y acceder a beneficios insuperables.</h2>
                 <h3>Para mayor información, te invitamos a ingresar aquí <br></br> <a href='https://www.samsung.com.pe/bespoke/' target='_blank' rel="noreferrer">https://www.samsung.com.pe/bespoke/</a></h3>
             </div>
 

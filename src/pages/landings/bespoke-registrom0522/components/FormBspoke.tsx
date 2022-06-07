@@ -204,7 +204,7 @@ const FormBespoke: FC = () => {
             </div>
             <div className="checkboxes">
               <PrivacyCheckBox label="PrivacyPolicy" name="privacy" />
-              <TermsCheckBox label="Terms and Conditions" name="terms" />
+              <TermsCheckBox label="Terms and Conditions" name="terms"   />
               <InformationCheckBox
                 label="Deseo recibir información de Samsung"
                 name="marketingOption"

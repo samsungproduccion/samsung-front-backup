@@ -25,8 +25,8 @@ const Router:FC = () => {
 
             <Routes>
                 <Route path="/" element={<PremiumService />} />
-                <Route path="/premium-service" element={<PremiumService />} />
                 <Route path="/thank-you-bespoke" element={<ThankBespoke />} />
+                <Route path="/premium-service" element={<PremiumService />} />
                 <Route path="/thank-you-bespoke-registro" element={<ThanksBespokeRegistro />} />
                 <Route path="/bespoke-registro" element={<BeSpokeRegistro />} />
                 <Route path="/bespoke" element={<BeSpokeapr22 />} />
