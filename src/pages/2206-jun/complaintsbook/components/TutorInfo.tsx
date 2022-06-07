@@ -1,9 +1,12 @@
 import { FormikTextInput } from "../../../../components/forms_v2/Inputs";
 import Locations from "../../../../components/locations";
 
-const TutorInfo = () => {
+interface Props{
+  age: boolean;
+}
+const TutorInfo = ({age}: Props) => {
   return (
-    <div className="form-section">
+    <div className={age ? "form-section" : "form-section dnone" }>
       <div className="section-title">
         <h2>Datos del padre/madre/tutor</h2>
       </div>

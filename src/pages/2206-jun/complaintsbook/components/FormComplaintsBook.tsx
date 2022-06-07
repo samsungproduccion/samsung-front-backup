@@ -72,7 +72,7 @@ const FormComplaintsBook = () => {
               ref={recaptcha}
             />
             <PersonalInfo />
-            <div className="age-container" style={{marginBottom: '30px'}}>
+            <div className="age-container" style={{ marginBottom: "30px" }}>
               <div className="ch-ff__field ch-ff__field--inline false">
                 <label htmlFor="underAge" className="checkbox">
                   <div>¿Eres menor de edad?</div>
@@ -87,9 +87,7 @@ const FormComplaintsBook = () => {
                 </label>
               </div>
             </div>
-            {
-              age ? <TutorInfo /> : null
-            }
+            {age ? <TutorInfo age={age} /> : null}
             <PurchaseInfo />
             <ComplainInfo />
 
@@ -99,6 +97,24 @@ const FormComplaintsBook = () => {
                   label="PrivacyPolicy"
                   name="acceptedPrivacyPolicy"
                 />
+              </div>
+              <div className="captcha-info">
+                Este sitio esta protegido por reCAPTCHA. Aplican la{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Política de Privacidad
+                </a>{" "}
+                de Google y los{" "}
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Términos del Servicio
+                </a>
               </div>
               <SubmitButton loading={loading} value={"ENVIAR"} />
             </div>

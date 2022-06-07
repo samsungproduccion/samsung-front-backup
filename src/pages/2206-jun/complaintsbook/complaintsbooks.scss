@@ -89,6 +89,15 @@
           width: unset;
         }
       }
+      .captcha-info{
+        margin: 10px auto;
+        font-size: 12px;
+        width: 400px;
+        text-align: center;
+        a:hover{
+          text-decoration: underline;
+        }
+      }
       .button--container{
         margin-top: 20px;
         width: 300px;

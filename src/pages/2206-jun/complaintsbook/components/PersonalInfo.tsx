@@ -5,7 +5,7 @@ const PersonalInfo = () => {
   return (
     <div className="form-section">
       <div className="section-title">
-        <h2>Datos Personales</h2>
+        <h2>Registra tus datos personales</h2>
       </div>
       <div className="input--container">
         <FormikTextInput label="Nombre (*)" name="firstName" type="text" />
