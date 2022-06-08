@@ -8,7 +8,7 @@ const Features = () => {
         <div className="title">
             <p className="primary">La mejor tecnología</p>
             <p className="secundary">
-                Innovación y calidad para mantener a tus alimentos y bebidas siempre frescos
+                Innovación y calidad para mantener tus alimentos y bebidas siempre frescos
             </p>
         </div>
         <div className="feature-list">

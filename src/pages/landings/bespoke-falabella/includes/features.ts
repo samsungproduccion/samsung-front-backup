@@ -42,7 +42,7 @@ export const feature_list: feature[] =[
     },
     {
         title: 'Power Cool / Power Freeze',
-        description: 'Toca el botón <b>Power Cool</b>  para enfriar rápidament y <b>Power Freeze</b> para congelar',
+        description: 'Toca el botón <b>Power Cool</b>  para enfriar rápidamente y <b>Power Freeze</b> para congelar',
         img: feature6,
         alt: 'feature 6',
     }
