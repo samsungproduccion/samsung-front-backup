@@ -30,17 +30,21 @@ const FormComplaintsBook = () => {
         validationSchema={age ? validationForm2 : validationForm}
         onSubmit={async (values, { resetForm }) => {
           console.log(values);
-          // setLoading(true);
-          // const { imagenUrl, uploadError } = await UploadFile(
-          //   imageRef.current.files
-          // );
-          // // console.log({imagenUrl, uploadError})
-          // if (uploadError) {
-          //   setLoading(false);
-          //   return setErrorImagen(true);
-          // } else {
-          //   setErrorImagen(false);
-          // }
+          setLoading(true);
+          if (imageRef.current.files[0]) {
+            const { imagenUrl, uploadError } = await UploadFile(
+              imageRef.current.files,
+              "complaintsBook"
+            );
+            console.log({imagenUrl, uploadError})
+            if (uploadError) {
+              setLoading(false);
+              return setErrorImagen(true);
+            } else {
+              setErrorImagen(false);
+            }
+          }
+          
           // setLoading(true);
           // try {
           //   // const validRecaptcha = await recaptcha.current.execute();
@@ -91,6 +95,31 @@ const FormComplaintsBook = () => {
             <TutorInfo age={age} />
             <PurchaseInfo />
             <ComplainInfo />
+            
+            <div className="ch-ff__field fileUploader">
+                <label htmlFor="product">Adjunta evidencias</label>
+                <input
+                  ref={imageRef}
+                  type="file"
+                  accept=".jpg, .jpeg, .png, .pdf, .tif, .bmp"
+                  // onChange={(e)=> handleImage(e)}
+                  
+                />
+                <p
+                  className={
+                    errorImagen ? "img-info input---error" : "img-info"
+                  }
+                >
+                  *Solo se podrá adjuntar un archivo con peso menor a 5MB.
+                </p>
+                <p
+                  className={
+                    errorImagen ? "img-info input---error" : "img-info"
+                  }
+                >
+                  *Formatos válidos JPG, PNG, BMP, TIF, PDF.
+                </p>
+              </div>
 
             <div className="form-footer">
               <div className="checkboxes">
