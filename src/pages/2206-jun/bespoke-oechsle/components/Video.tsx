@@ -5,7 +5,7 @@ const Video = () => {
     <div className="video-container section">
         <div className="title">
             <p>BE<span>SPOKE</span> </p>
-            <p className="phrase">Dale a tu hogar estilo</p>
+            <p className="phrase">Dale a tu hogar tu estilo</p>
         </div>
         <div className="video-box">
         <VideoIframe link="8eo-nMnKPls" title="bespoke" />

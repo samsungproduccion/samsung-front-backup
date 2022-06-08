@@ -1,5 +1,5 @@
 import { feature_list } from "../includes/features";
-
+import parse from 'html-react-parser';
 
 const Features = () => {
     
@@ -21,11 +21,11 @@ const Features = () => {
                         <div className="info">
                             <h4 className="feature-title">{feature.title}</h4>
                             <p className="feature-description">
-                                {feature.description}
+                                {parse(feature.description)}
                             </p>
                             {
                                 feature.info ?
-                                    <p className="additional-info">{feature.info}</p>
+                                    <p className="additional-info"> {feature.info} </p>
                                 :null
                             }
                         </div>

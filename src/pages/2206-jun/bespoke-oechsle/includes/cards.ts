@@ -4,21 +4,21 @@ import refri_2 from '../../../../assets/images/bespoke-falabella/refri-02.png';
 import refri_3 from '../../../../assets/images/bespoke-falabella/refri-03.png';
 export const cardItem: simpleCard[] = [
     {
-        title: 'Refrigeradora 328L Bespoke Blanca RB3335',
+        title: 'Refrigeradora Bespoke 1 Puerta 315L RZ32A744535/PE Blanca',
         image: refri_1,
-        alt: 'Refrigeradora 328L Bespoke Blanca RB3335',
-        url: 'https://www.falabella.com.pe/falabella-pe/product/18944489/Refrigeradora-328L-Bespoke-Blanca-RB3335/18944489',
+        alt: 'Refrigeradora Bespoke 1 Puerta 315L RZ32A744535/PE Blanca',
+        url: 'https://www.oechsle.pe/refrigeradora-bespoke-1-puerta-315l-rz32a744535-pe-blanca-2114618/p',
     },
     {
-        title: 'Refrigeradora 315L Bespoke Azul RZ3241',
+        title: 'Refrigeradora Bespoke 1 Puerta 315L RZ32A744541/PE Azul',
         image: refri_2,
-        alt: 'Refrigeradora 315L Bespoke Azul RZ3241',
-        url: 'https://www.falabella.com.pe/falabella-pe/product/18944491/Refrigeradora-315L-Bespoke-Azul-RZ3241/18944491',
+        alt: 'Refrigeradora Bespoke 1 Puerta 315L RZ32A744541/PE Azul',
+        url: 'https://www.oechsle.pe/refrigeradora-bespoke-1-puerta-315l-rz32a744541-pe-azul-2114617/p',
     },
     {
-        title: 'Refrigeradora 315L Bespoke Blanca RZ3235',
+        title: 'Refrigeradora Bespoke Bottom Freezer 328L RB33A307035/PE Blanca',
         image: refri_3,
-        alt: 'Refrigeradora 315L Bespoke Blanca RZ3235',
-        url: 'https://www.falabella.com.pe/falabella-pe/product/18944490/Refrigeradora-315L-Bespoke-Blanca-RZ3235/18944490',
+        alt: 'Refrigeradora Bespoke Bottom Freezer 328L RB33A307035/PE Blanca',
+        url: 'https://www.oechsle.pe/refrigeradora-bespoke-bottom-freezer-328l-rb33a307035-pe-blanca-2114619/p',
     },
 ];

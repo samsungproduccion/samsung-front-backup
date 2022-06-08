@@ -16,7 +16,7 @@ export const feature_list: feature[] =[
         alt: 'feature 1',
     },
     {
-        title: 'Refrigeración Flexible',
+        title: 'Refrigeración Flexible*',
         description: 'Elige activar el modo conservador o congelador de acuerdo a tus necesidades',
         img: feature2,
         alt: 'feature 2',
@@ -42,7 +42,7 @@ export const feature_list: feature[] =[
     },
     {
         title: 'Power Cool / Power Freeze',
-        description: 'Toca el botón Power Cool para enfriar rápidamente y Power Freeze para congelar',
+        description: 'Toca el botón <b>Power Cool</b>  para enfriar rápidament y <b>Power Freeze</b> para congelar',
         img: feature6,
         alt: 'feature 6',
     }
