@@ -29,7 +29,7 @@ const FormComplaintsBook = () => {
         initialValues={iniValues}
         validationSchema={age ? validationForm2 : validationForm}
         onSubmit={async (values, { resetForm }) => {
-          console.log(values);
+          let imageLink = '';
           setLoading(true);
           if (imageRef.current.files[0]) {
             const { imagenUrl, uploadError } = await UploadFiles(
@@ -41,10 +41,11 @@ const FormComplaintsBook = () => {
               setLoading(false);
               return setErrorImagen(true);
             } else {
+              imageLink = imagenUrl;
               setErrorImagen(false);
             }
           }
-          
+          console.log({...values, uploadImage: imageLink });
           // setLoading(true);
           // try {
           //   // const validRecaptcha = await recaptcha.current.execute();

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://api.samsung.com.pe/global/mediaFolder/file-upload';
+const url = 'https://api.samsung.com.pe/global/mediaFolder/file-upload';
 // const url = 'http://localhost:4000/global/mediaFolder/file-upload';
 
 export const UploadFiles = async (files: FileList, imageFolder:string) => {
