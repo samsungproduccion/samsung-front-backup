@@ -20,11 +20,11 @@ const Router:FC = () => {
     return ( 
         <BrowserRouter>
             {/* <Routes>
-                <Route path="/bespoke" element={<BeSpokeapr22 />} />
+                <Route path="/premium-service" element={<PremiumService />} />
             </Routes> */}
 
             <Routes>
-                <Route path="/" element={<PremiumService />} />
+                <Route path="/bespoke" element={<BeSpokeapr22 />} />
                 <Route path="/thank-you-bespoke" element={<ThankBespoke />} />
                 <Route path="/premium-service" element={<PremiumService />} />
                 <Route path="/thank-you-bespoke-registro" element={<ThanksBespokeRegistro />} />

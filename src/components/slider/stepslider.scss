@@ -106,7 +106,7 @@ $transition-step : .3s;
 
 @media screen and (max-width: 768px) {
     .step-slider{
-        overflow-x: hidden;
+        overflow: hidden;
         img{
             width: 100%;
         }

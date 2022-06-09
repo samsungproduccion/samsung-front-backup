@@ -9,9 +9,9 @@ import { validationForm, validationForm2 } from "../includes/validationForm";
 import PersonalInfo from "./PersonalInfo";
 import PurchaseInfo from "./PurchaseInfo";
 import ComplainInfo from "./ComplainInfo";
-import { UploadFile } from "../../../../utils/uploadFile";
 import { iniValues } from "../includes/initialValues";
 import TutorInfo from "./TutorInfo";
+import { UploadFiles } from "../../../../utils/uploadFiles";
 
 const FormComplaintsBook = () => {
   const [loading, setLoading] = useState(false);
@@ -32,9 +32,9 @@ const FormComplaintsBook = () => {
           console.log(values);
           setLoading(true);
           if (imageRef.current.files[0]) {
-            const { imagenUrl, uploadError } = await UploadFile(
+            const { imagenUrl, uploadError } = await UploadFiles(
               imageRef.current.files,
-              "complaintsBook"
+              "complaintsBookTest"
             );
             console.log({imagenUrl, uploadError})
             if (uploadError) {
