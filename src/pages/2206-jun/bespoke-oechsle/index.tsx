@@ -13,13 +13,16 @@ const BespokeOechsle = () => {
   InitGtm('GTM-KTFDR5Q');
 
   return (
-    <div className="main--container-fb" style={{marginBottom: '50px'}}>
+    <div className="main--container-oechsle" style={{marginBottom: '50px'}}>
       <div className="line">
         <div className="logo-samsung">
           <img src={logo_samsung} alt="logo-samsung" />
         </div>
       </div>
       <Hero />
+      <div className="brand-button-container">
+        <a className="brand-button" href="https://busca.oechsle.pe/search?query=bespoke" target='_blank' rel="noreferrer">Ver todo</a>
+      </div>
       <Video />
       <Features />
       <ImagesContainer />

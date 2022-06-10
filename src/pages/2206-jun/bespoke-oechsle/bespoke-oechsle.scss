@@ -1,4 +1,4 @@
-.main--container-fb {
+.main--container-oechsle {
   max-width: 1400px;
   margin: 0 auto;
   overflow-x: hidden;
@@ -50,6 +50,30 @@
       height: 500px;
       width: 800px;
       margin: 0 auto;
+    }
+  }
+
+  .brand-button-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 50px;
+    .brand-button{
+      display: inline-block;
+      background-color: #f93449;
+      color: white;
+      border-radius: 6px;
+      line-height: 1;
+      padding: 15px 15px;
+      font-size: 25px;
+      transition: all .5s ease;
+      text-align: center;
+      width: 300px;
+      font-family: SamsungSharpSans, Arial;
+      font-weight: normal;
+    }
+    .brand-button:hover{
+      opacity: .8;
     }
   }
 

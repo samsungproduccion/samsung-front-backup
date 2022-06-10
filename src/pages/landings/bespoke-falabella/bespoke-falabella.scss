@@ -26,6 +26,31 @@
       }
     }
   }
+  .brand-button-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 50px;
+    .brand-button{
+      display: inline-block;
+      background-color: #8fca00;
+      color: white;
+      border-radius: 3px;
+      transition: all .5s ease;
+      text-align: center;
+      width: 300px;
+      font-family: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+      height: 55px;
+      letter-spacing: 1px;
+      font-size: 1.4rem;
+      padding: 10px 10px;
+    }
+    .brand-button:hover{
+      opacity: .8;
+    }
+  }
   .video-container {
     .title {
       p {
