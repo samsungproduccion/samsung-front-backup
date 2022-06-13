@@ -1,17 +1,22 @@
-import { ErrorMessage, Field, useFormikContext } from "formik";
+import { ErrorMessage, Field, useField, useFormikContext } from "formik";
 import { ChangeEvent, useState } from "react";
 import {
   states,
   cities,
   districts,
   getState,
-  getCity
+  getCity,
 } from "../../utils/locations";
 
-
-const Locations = ({stateName='state', cityName='city', districtName='district'}) => {
+const Locations = ({
+  stateName = "state",
+  cityName = "city",
+  districtName = "district",
+}) => {
   const formik = useFormikContext<any>();
-
+  const [_, metaState] = useField(stateName);
+  const [__, metaCity] = useField(cityName);
+  const [___, metaDistrict] = useField(districtName);
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
 
@@ -50,6 +55,11 @@ const Locations = ({stateName='state', cityName='city', districtName='district'}
           name={stateName}
           id={stateName}
           onChange={cambiarEstados}
+          className={
+            metaState.touched && metaState.error
+              ? "text-input input-error "
+              : "text-input"
+          }
         >
           <option value="">Selecciona</option>
           {states
@@ -60,11 +70,25 @@ const Locations = ({stateName='state', cityName='city', districtName='district'}
               ))
             : null}
         </Field>
-        <ErrorMessage name={stateName} component="p" className="input---error" />
+        <ErrorMessage
+          name={stateName}
+          component="p"
+          className="input---error"
+        />
       </div>
       <div className="ch-ff__field">
         <label htmlFor={cityName}>Provincia (*)</label>
-        <Field as="select" id={cityName} name={cityName} onChange={cambiarCiudades}>
+        <Field
+          as="select"
+          id={cityName}
+          name={cityName}
+          className={
+            metaCity.touched && metaCity.error
+              ? "text-input input-error "
+              : "text-input"
+          }
+          onChange={cambiarCiudades}
+        >
           <option value="">Selecciona</option>
           {cities.map((city, index) => {
             if (city.id_state === state) {
@@ -82,7 +106,16 @@ const Locations = ({stateName='state', cityName='city', districtName='district'}
       </div>
       <div className="ch-ff__field">
         <label htmlFor={districtName}>Distrito (*)</label>
-        <Field as="select" name={districtName} id={districtName}>
+        <Field
+          as="select"
+          name={districtName}
+          id={districtName}
+          className={
+            metaDistrict.touched && metaDistrict.error
+              ? "text-input input-error "
+              : "text-input"
+          }
+        >
           <option value="">Selecciona</option>
           {districts.map((district, index) => {
             if (district.codeCity === city && district.codeState === state) {
@@ -96,7 +129,11 @@ const Locations = ({stateName='state', cityName='city', districtName='district'}
             }
           })}
         </Field>
-        <ErrorMessage name={districtName} component="p" className="input---error" />
+        <ErrorMessage
+          name={districtName}
+          component="p"
+          className="input---error"
+        />
       </div>
     </>
   );

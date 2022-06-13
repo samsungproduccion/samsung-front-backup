@@ -3756,6 +3756,10 @@ html[lang^="th"] [data-font-size-pc="12"] {
 	border: 2px solid red!important;
 	animation: scale-animation .2s 1;
 }
+.input-error{
+	border: 1px solid #ff000082!important;
+	transition: .5s;
+}
 
 @font-face {
   font-family: "SamsungSharpSans-MD";

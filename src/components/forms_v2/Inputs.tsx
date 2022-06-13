@@ -26,12 +26,18 @@ interface InputType3 {
 }
 
 export const FormikTextInput = ({ label, ...props }: InputType1) => {
-  const [field] = useField(props);
+  const [field, meta] = useField(props);
 
   return (
     <div className="ch-ff__field ch-ff__note false">
       <label htmlFor={props.id || props.name}>{label}</label>
-      <input className="text-input" {...field} {...props} />
+      <input
+        className={
+          meta.touched && meta.error ? "text-input input-error " : "text-input"
+        }
+        {...field}
+        {...props}
+      />
       <ErrorMessage name={props.name} component="p" className="input---error" />
     </div>
   );
@@ -52,24 +58,36 @@ export const FormikCheckBox = ({ label, ...props }: InputType2) => {
 };
 
 export const FormikSelectInput = ({ label, ...props }: InputType2) => {
-  const [field] = useField(props);
+  const [field, meta] = useField(props);
 
   return (
     <div className="ch-ff__field">
       <label htmlFor={props.id || props.name}>{label}</label>
-      <select className="text-input" {...field} {...props} />
+      <select
+        className={
+          meta.touched && meta.error ? "text-input input-error " : "text-input"
+        }
+        {...field}
+        {...props}
+      />
       <ErrorMessage name={props.name} component="p" className="input---error" />
     </div>
   );
 };
 
 export const FormikAreaInput = ({ label, ...props }: InputType1) => {
-  const [field] = useField(props);
+  const [field, meta] = useField(props);
 
   return (
     <div className="ch-ff__field ch-ff__note false">
       <label htmlFor={props.id || props.name}>{label}</label>
-      <textarea className="text-input" {...field} {...props} />
+      <textarea
+        className={
+          meta.touched && meta.error ? "text-input input-error " : "text-input"
+        }
+        {...field}
+        {...props}
+      />
       <ErrorMessage name={props.name} component="p" className="input---error" />
     </div>
   );
@@ -77,13 +95,18 @@ export const FormikAreaInput = ({ label, ...props }: InputType1) => {
 
 export const FormikDatePicker = ({ label, ...props }: InputType2) => {
   const { setFieldValue } = useFormikContext();
-  const [field] = useField(props);
+  const [field, meta] = useField(props);
   return (
     <div className="ch-ff__field ch-ff__note false">
       <label htmlFor={props.id || props.name}>{label}</label>
       <Flatpickr
         // {...field}
         {...props}
+        className={
+          meta.touched && meta.error
+            ? "input-error flatpickr-input"
+            : "flatpickr-input"
+        }
         options={{
           // enableTime: true,
           maxDate: "today",
@@ -139,7 +162,7 @@ export const FormikDatePicker = ({ label, ...props }: InputType2) => {
         //   setFecha({ date });
         // }}
         onChange={([date]) => {
-          const fecha = (date.toISOString().substring(0,10));
+          const fecha = date.toISOString().substring(0, 10);
           console.log(fecha);
           setFieldValue(field.name, fecha);
         }}
@@ -149,7 +172,11 @@ export const FormikDatePicker = ({ label, ...props }: InputType2) => {
   );
 };
 
-export const TermsCheckBox = ({ label, url='https://samsung.com.pe', ...props }: InputType3) => {
+export const TermsCheckBox = ({
+  label,
+  url = "https://samsung.com.pe",
+  ...props
+}: InputType3) => {
   const [field, meta] = useField({ ...props, type: "checkbox" });
 
   return (
@@ -157,12 +184,7 @@ export const TermsCheckBox = ({ label, url='https://samsung.com.pe', ...props }:
       <label htmlFor="acceptedTermsOfService" className="checkbox">
         <div>
           Acepto los{" "}
-          <a
-            href={url}
-            className="ch-link"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={url} className="ch-link" target="_blank" rel="noreferrer">
             Terminos y condiciones (*){" "}
           </a>
         </div>
@@ -182,7 +204,11 @@ export const TermsCheckBox = ({ label, url='https://samsung.com.pe', ...props }:
     </div>
   );
 };
-export const PrivacyCheckBox = ({ label,url="https://www.samsung.com/pe/info/privacy/", ...props }: InputType3) => {
+export const PrivacyCheckBox = ({
+  label,
+  url = "https://www.samsung.com/pe/info/privacy/",
+  ...props
+}: InputType3) => {
   const [field, meta] = useField({ ...props, type: "checkbox" });
 
   return (
@@ -190,12 +216,7 @@ export const PrivacyCheckBox = ({ label,url="https://www.samsung.com/pe/info/pri
       <label htmlFor="acceptedPrivacyPolicy" className="checkbox">
         <div>
           Acepto la{" "}
-          <a
-            href={url}
-            className="ch-link"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={url} className="ch-link" target="_blank" rel="noreferrer">
             POLÍTICA DE PRIVACIDAD (*){" "}
           </a>
         </div>
