@@ -34,7 +34,7 @@ const Router:FC = () => {
                 <Route path="/bespoke-falabella" element={<BespokeFalabella />} />
                 <Route path="/bespoke-oechsle" element={<BespokeOechsle />} />
                 <Route path="/bespoke-ripley" element={<BespokeRipley />} />
-                <Route path="/libro-reclamaciones" element={<ComplaintsBook />} />
+                <Route path="/libro-de-reclamaciones" element={<ComplaintsBook />} />
                 <Route path="*" element={<PremiumService />} />
             </Routes>
 

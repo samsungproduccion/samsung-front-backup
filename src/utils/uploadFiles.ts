@@ -24,9 +24,17 @@ export const UploadFiles = async (files: FileList, imageFolder:string) => {
             }else{
                 uploadError = true;
             }
+            return {
+                imagenUrl,
+                uploadError
+            }
         } catch (uploadError) {
             console.log(uploadError)
             uploadError = true;
+            return {
+                imagenUrl,
+                uploadError
+            }
         }
         
     }
@@ -35,4 +43,6 @@ export const UploadFiles = async (files: FileList, imageFolder:string) => {
         imagenUrl,
         uploadError
     }
+
+    
 };

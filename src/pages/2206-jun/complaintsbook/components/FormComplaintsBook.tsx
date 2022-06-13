@@ -1,7 +1,6 @@
 import { Field, Form, Formik } from "formik";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { CREATE_BESPOKE } from "../../../../graphql/BeSpoke";
 import { useMutation } from "@apollo/client";
 import { PrivacyCheckBox } from "../../../../components/forms_v2/Inputs";
 import SubmitButton from "../../../../components/forms_v2/Submit";
@@ -12,6 +11,8 @@ import ComplainInfo from "./ComplainInfo";
 import { iniValues } from "../includes/initialValues";
 import TutorInfo from "./TutorInfo";
 import { UploadFiles } from "../../../../utils/uploadFiles";
+import { sweetAlert } from "../../../../components/alert/sweetAlert";
+import { CREATE_COMPLAINT_BOOK } from "../../../../graphql/ComplaintsBook";
 
 const FormComplaintsBook = () => {
   const [loading, setLoading] = useState(false);
@@ -21,7 +22,16 @@ const FormComplaintsBook = () => {
   const [errorImagen, setErrorImagen] = useState(false);
 
 
-  // console.log(age)
+  const [createComplaintBook] = useMutation(CREATE_COMPLAINT_BOOK, {
+    onError(error) {
+      
+      if (error.networkError) {
+        sweetAlert("error", "Hubo un error", "");
+      } else {
+        sweetAlert("error", "No se registro", error.message);
+      }
+    },
+  });
 
   return (
     <div className="form-complaints-book">
@@ -36,7 +46,7 @@ const FormComplaintsBook = () => {
               imageRef.current.files,
               "complaintsBookTest"
             );
-            console.log({imagenUrl, uploadError})
+            
             if (uploadError) {
               setLoading(false);
               return setErrorImagen(true);
@@ -44,28 +54,28 @@ const FormComplaintsBook = () => {
               imageLink = imagenUrl;
               setErrorImagen(false);
             }
+            console.log({imagenUrl, uploadError})
           }
-          console.log({...values, uploadImage: imageLink });
-          // setLoading(true);
-          // try {
-          //   // const validRecaptcha = await recaptcha.current.execute();
-          //   // if (!validRecaptcha) return setLoading(false);
-          //   const response = await createUser({
-          //     variables: { ...values, image: imagenUrl, art: art.name },
-          //   });
-          //   if (response.data?.addEvoucherBespoke) {
-          //     resetForm();
-          //     setLoading(false);
-          //     window.location.href =
-          //       "https://samsung.com.pe/thank-you-bespoke-registro/";
-          //   }
-          //   // console.log(data)
-          //   setLoading(false);
-          // } catch (error) {
-          //   console.log(error);
-          //   setLoading(false);
-          // }
-          // console.log({ ...values, image: imagenUrl, art: art.name });
+          console.log({...values, uploadFile: imageLink, underAge: age });
+          setLoading(true);
+          try {
+            const validRecaptcha = await recaptcha.current.execute();
+            if (!validRecaptcha) return setLoading(false);
+            const response = await createComplaintBook({
+              variables: {...values, uploadFile: imageLink, underAge: age },
+            });
+            console.log(response.data)
+            if (response.data?.addComplaintsBook) {
+              resetForm();
+              setLoading(false);
+              sweetAlert("success", "Se registró correctamente", "");
+            }
+            setLoading(false);
+          } catch (error) {
+            console.log(error);
+            setLoading(false);
+          }
+          console.log({...values, uploadFile: imageLink, underAge: age });
           setLoading(false);
         }}
       >
@@ -123,6 +133,10 @@ const FormComplaintsBook = () => {
               </div>
 
             <div className="form-footer">
+              <div className="final-info">
+                <p>Debido que los datos personales que usted nos proporcione son necesarios para la atención de las reclamaciones de los servicios prestados por nuestra institución, SAMSUNG ELECTRONICS S.A.C. realizará el tratamiento de sus datos personales estricta y únicamente para dicha finalidad. Usted podrá ejercer sus derechos de información, acceso, rectificación, cancelación y oposición de sus datos personales, en cualquier momento, enviándonos un correo electrónico a servicioalcliente@samsung.com.</p>
+                <p>La formulación del reclamo no impide acudir a otras vías de controversias ni es requisito previo para interponer una denuncia ante INDECOPI.</p>
+              </div>
               <div className="checkboxes">
                 <PrivacyCheckBox
                   label="PrivacyPolicy"
