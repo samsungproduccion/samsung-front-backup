@@ -1,4 +1,5 @@
 import { cardItem } from "../includes/cards";
+import parse from 'html-react-parser';
 
 const Cards = () => {
     
@@ -18,7 +19,7 @@ const Cards = () => {
                             <img src={card.image} alt={card.alt} />
                         </div>
                         <div className="card-info">
-                            <h4 className="card-title">{card.title}</h4>
+                            <h4 className="card-title">{ parse(card.title) }</h4>
                             <a className="card-button" href={card.url} target="_blank" rel="noreferrer" >COMPRA AQUÍ</a>
                         </div>
                     </div>

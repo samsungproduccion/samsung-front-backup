@@ -20,10 +20,11 @@ const BespokeOechsle = () => {
         </div>
       </div>
       <Hero />
+      
+      <Video />
       <div className="brand-button-container">
         <a className="brand-button" href="https://busca.oechsle.pe/search?query=bespoke" target='_blank' rel="noreferrer">Ver todo</a>
       </div>
-      <Video />
       <Features />
       <ImagesContainer />
       <Cards />
