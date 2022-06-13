@@ -1,4 +1,4 @@
-.main--container-fb {
+.main--container-rp {
   max-width: 1400px;
   margin: 0 auto;
   overflow-x: hidden;
@@ -24,6 +24,30 @@
       img {
         width: 100%;
       }
+    }
+  }
+
+  .brand-button-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 50px;
+    .brand-button{
+      display: inline-block;
+      background-color: #6a148e;
+      color: white;
+      border-radius: 6px;
+      line-height: 1;
+      padding: 15px 15px;
+      font-size: 25px;
+      transition: all .5s ease;
+      text-align: center;
+      width: 300px;
+      font-family: SamsungSharpSans, Arial;
+      font-weight: normal;
+    }
+    .brand-button:hover{
+      background-color: #4a0e63;
     }
   }
   .video-container {
