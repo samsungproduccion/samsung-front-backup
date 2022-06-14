@@ -1,9 +1,9 @@
-import carousel_1 from "../../../../assets/images/bespoke-falabella/carousel-1.jpg";
-import grid_1 from "../../../../assets/images/bespoke-falabella/grid-1.jpg";
-import grid_2 from "../../../../assets/images/bespoke-falabella/grid-2.jpg";
-import grid_3 from "../../../../assets/images/bespoke-falabella/grid-3.jpg";
-import grid_4 from "../../../../assets/images/bespoke-falabella/grid-4.jpg";
-import grid_5 from "../../../../assets/images/bespoke-falabella/grid-6.jpg";
+import carousel_1 from "../../../../assets/images/bespoke/falabella/carousel-1.jpg";
+import grid_1 from "../../../../assets/images/bespoke/falabella/grid-1.jpg";
+import grid_2 from "../../../../assets/images/bespoke/falabella/grid-2.jpg";
+import grid_3 from "../../../../assets/images/bespoke/falabella/grid-3.jpg";
+import grid_4 from "../../../../assets/images/bespoke/falabella/grid-4.jpg";
+import grid_5 from "../../../../assets/images/bespoke/falabella/grid-6.jpg";
 const ImagesContainer = () => {
   return (
     <div className="images-container section">

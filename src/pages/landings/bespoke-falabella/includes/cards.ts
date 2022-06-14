@@ -1,7 +1,7 @@
 import { simpleCard } from "../../../../types/bespoke";
-import refri_1 from '../../../../assets/images/bespoke-falabella/refri-01.png';
-import refri_2 from '../../../../assets/images/bespoke-falabella/refri-02.png';
-import refri_3 from '../../../../assets/images/bespoke-falabella/refri-03.png';
+import refri_1 from '../../../../assets/images/bespoke/falabella/refri-01.png';
+import refri_2 from '../../../../assets/images/bespoke/falabella/refri-02.png';
+import refri_3 from '../../../../assets/images/bespoke/falabella/refri-03.png';
 export const cardItem: simpleCard[] = [
     {
         title: 'Refrigeradora 315L Bespoke Blanca RZ3235',

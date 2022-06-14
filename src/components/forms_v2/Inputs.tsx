@@ -163,7 +163,7 @@ export const FormikDatePicker = ({ label, ...props }: InputType2) => {
         // }}
         onChange={([date]) => {
           const fecha = date.toISOString().substring(0, 10);
-          console.log(fecha);
+          // console.log(fecha);
           setFieldValue(field.name, fecha);
         }}
       />

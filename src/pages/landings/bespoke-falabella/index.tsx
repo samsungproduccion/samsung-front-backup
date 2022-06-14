@@ -22,7 +22,7 @@ const BespokeFalabella = () => {
       
       <Video />
       <div className="brand-button-container">
-        <a className="brand-button" href="https://www.falabella.com.pe/falabella-pe/search?Ntt=bespoke" target='_blank' rel="noreferrer">Ver todo</a>
+        <a className="brand-button" href="https://www.falabella.com.pe/falabella-pe/collection/bespoke" target='_blank' rel="noreferrer">Ver todo</a>
       </div>
       <Features />
       <ImagesContainer />

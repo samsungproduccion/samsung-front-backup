@@ -1,9 +1,9 @@
-import feature1 from "../../../../assets/images/bespoke-falabella/feature-1.jpg";
-import feature2 from "../../../../assets/images/bespoke-falabella/feature-2.jpg";
-import feature3 from "../../../../assets/images/bespoke-falabella/feature-3.jpg";
-import feature4 from "../../../../assets/images/bespoke-falabella/feature-4.jpg";
-import feature5 from "../../../../assets/images/bespoke-falabella/feature-5.jpg";
-import feature6 from "../../../../assets/images/bespoke-falabella/feature-6.jpg";
+import feature1 from "../../../../assets/images/bespoke/falabella/feature-1.jpg";
+import feature2 from "../../../../assets/images/bespoke/falabella/feature-2.jpg";
+import feature3 from "../../../../assets/images/bespoke/falabella/feature-3.jpg";
+import feature4 from "../../../../assets/images/bespoke/falabella/feature-4.jpg";
+import feature5 from "../../../../assets/images/bespoke/falabella/feature-5.jpg";
+import feature6 from "../../../../assets/images/bespoke/falabella/feature-6.jpg";
 
 import { feature } from "../../../../types/bespoke";
 
