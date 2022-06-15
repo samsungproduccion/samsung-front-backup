@@ -9,7 +9,7 @@ import { InitGtm } from "../../../utils/gtm";
 
 
 const BespokeRipley = () => {
-
+  document.body.classList.add("overflow-hidden");
   InitGtm('GTM-KTFDR5Q');
 
   return (

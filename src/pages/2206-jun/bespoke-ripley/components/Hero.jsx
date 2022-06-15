@@ -1,6 +1,6 @@
 
 import banner from "../../../../assets/images/bespoke/ripley/main_banner_desktop.gif";
-import banner_mobile from "../../../../assets/images/bespoke/oechsle/main_banner_mobile.gif";
+import banner_mobile from "../../../../assets/images/bespoke/ripley/main_banner_mobile.gif";
 import { useDevice } from "../../../../hooks/useDevice";
 
 const Hero = () => {

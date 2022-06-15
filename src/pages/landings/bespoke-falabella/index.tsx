@@ -8,7 +8,7 @@ import logo_samsung from "../../../assets/images/svg/svg-logo.svg";
 import { InitGtm } from "../../../utils/gtm";
 
 const BespokeFalabella = () => {
-
+  document.body.classList.add("overflow-hidden");
   InitGtm('GTM-KTFDR5Q');
 
   return (
