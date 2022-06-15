@@ -6,13 +6,13 @@ import {
     // HashRouter
 } from "react-router-dom";
 import BeSpokeapr22 from "./pages/landings/BeSpokeapr22";
-import BespokeOechsle from "./pages/2206-jun/bespoke-oechsle";
-import BespokeFalabella from "./pages/landings/bespoke-falabella";
 import BeSpokeRegistro from "./pages/landings/bespoke-registrom0522";
 import PremiumService from "./pages/landings/premium-service20abr22";
 import ThankBespoke from "./pages/landings/thankyou/ThankBespoke";
 import ThanksBespokeRegistro from "./pages/landings/thankyou/ThankBespokeRegistro";
 import ComplaintsBook from "./pages/2206-jun/complaintsbook";
+import BespokeOechsle from "./pages/2206-jun/bespoke-oechsle";
+import BespokeFalabella from "./pages/landings/bespoke-falabella";
 import BespokeRipley from "./pages/2206-jun/bespoke-ripley";
 
 
@@ -21,7 +21,7 @@ const Router:FC = () => {
     return ( 
         <BrowserRouter>
             {/* <Routes>
-                <Route path="/premium-service" element={<PremiumService />} />
+                <Route path="/bespoke-ripley" element={<BespokeRipley />} />
             </Routes> */}
 
             <Routes>

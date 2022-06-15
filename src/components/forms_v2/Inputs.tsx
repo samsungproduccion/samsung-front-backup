@@ -61,7 +61,7 @@ export const FormikSelectInput = ({ label, ...props }: InputType2) => {
   const [field, meta] = useField(props);
 
   return (
-    <div className="ch-ff__field">
+    <div className="ch-ff__field ch-ff__note false">
       <label htmlFor={props.id || props.name}>{label}</label>
       <select
         className={

@@ -16,7 +16,8 @@
     border-radius: 3px;
     resize: none;
     outline: none;
-    padding: 20px;
+    padding: 10px;
+    font-size: 14px;
   }
   .main-title{
     margin: 50px auto;
@@ -50,7 +51,7 @@
     .form-section2{
       margin-bottom: 30px;
       transition: all 0.5s ease-out 0s;
-      // height: 462px;
+      height: 250px;
       -webkit-transition: all 0.5s ease-out 0s;
       // overflow: hidden;
     }
@@ -72,6 +73,14 @@
       div{
         width: 100%;
       }
+      .information{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        font-size: 12px;
+        padding-left: 5px;
+      }
       
     }
 
@@ -82,6 +91,7 @@
       div{
         width: 100%;
       }
+      
     }
     .area-container{
       div{
@@ -133,9 +143,9 @@
       height: 0px !important;
       overflow: hidden;
       margin: 0;
-      transition: all 0.5s ease-out 0s;
-      -webkit-transition: all 0.5s ease-out 0s
-      
+      transition: all 0.8s ease-out 0s;
+      -webkit-transition: all 0.5s ease-out 0s;
+      opacity: 0;
     }
     .img-info{
       font-size: 12px;
@@ -151,9 +161,9 @@
     .form-complaints-book{
       padding: 10px 20px;
 
-      // .form-section2{
-      //   height: 1030px;
-      // }
+      .form-section2{
+        height: 530px;
+      }
       .section-title{
         h2{
           font-size: 30px;
@@ -162,6 +172,10 @@
       .input--container, .twice-row{
         gap: 0px;
         grid-template-columns: repeat(1, 1fr);
+        .information{
+          font-size: 12px;
+          margin-bottom: 30px;
+        }
       }
       .form-footer{
         .captcha-info{

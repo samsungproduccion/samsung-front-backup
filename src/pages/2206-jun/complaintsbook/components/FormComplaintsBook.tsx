@@ -1,25 +1,22 @@
-import { Field, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useMutation } from "@apollo/client";
 import { PrivacyCheckBox } from "../../../../components/forms_v2/Inputs";
 import SubmitButton from "../../../../components/forms_v2/Submit";
-import { validationForm, validationForm2 } from "../includes/validationForm";
+import { validationForm } from "../includes/validationForm";
 import PersonalInfo from "./PersonalInfo";
 import PurchaseInfo from "./PurchaseInfo";
 import ComplainInfo from "./ComplainInfo";
 import { iniValues } from "../includes/initialValues";
 import TutorInfo from "./TutorInfo";
-import { UploadFiles } from "../../../../utils/uploadFiles";
 import { sweetAlert } from "../../../../components/alert/sweetAlert";
 import { CREATE_COMPLAINT_BOOK } from "../../../../graphql/ComplaintsBook";
 
 const FormComplaintsBook = () => {
   const [loading, setLoading] = useState(false);
   const recaptcha = useRef<any>(null);
-  const imageRef = useRef<any>(null);
   const [age, setAge] = useState(false);
-  const [errorImagen, setErrorImagen] = useState(false);
 
 
   const [createComplaintBook] = useMutation(CREATE_COMPLAINT_BOOK, {
@@ -37,32 +34,17 @@ const FormComplaintsBook = () => {
     <div className="form-complaints-book">
       <Formik
         initialValues={iniValues}
-        validationSchema={age ? validationForm2 : validationForm}
+        validationSchema={validationForm}
         onSubmit={async (values, { resetForm }) => {
-          let imageLink = '';
           setLoading(true);
-          if (imageRef.current.files[0]) {
-            const { imagenUrl, uploadError } = await UploadFiles(
-              imageRef.current.files,
-              "complaintsBookTest"
-            );
-            
-            if (uploadError) {
-              setLoading(false);
-              return setErrorImagen(true);
-            } else {
-              imageLink = imagenUrl;
-              setErrorImagen(false);
-            }
-            console.log({imagenUrl, uploadError})
-          }
-          console.log({...values, uploadFile: imageLink, underAge: age });
+        
+          console.log({...values, underAge: age });
           setLoading(true);
           try {
             const validRecaptcha = await recaptcha.current.execute();
             if (!validRecaptcha) return setLoading(false);
             const response = await createComplaintBook({
-              variables: {...values, uploadFile: imageLink, underAge: age },
+              variables: {...values, underAge: age },
             });
             console.log(response.data)
             if (response.data?.addComplaintsBook) {
@@ -75,7 +57,7 @@ const FormComplaintsBook = () => {
             console.log(error);
             setLoading(false);
           }
-          console.log({...values, uploadFile: imageLink, underAge: age });
+          console.log({...values, underAge: age });
           setLoading(false);
         }}
       >
@@ -107,30 +89,6 @@ const FormComplaintsBook = () => {
             <PurchaseInfo />
             <ComplainInfo />
             
-            <div className="ch-ff__field fileUploader">
-                <label htmlFor="product">Adjunta evidencias</label>
-                <input
-                  ref={imageRef}
-                  type="file"
-                  accept=".jpg, .jpeg, .png, .pdf, .tif, .bmp"
-                  // onChange={(e)=> handleImage(e)}
-                  
-                />
-                <p
-                  className={
-                    errorImagen ? "img-info input---error" : "img-info"
-                  }
-                >
-                  *Solo se podrá adjuntar un archivo con peso menor a 5MB.
-                </p>
-                <p
-                  className={
-                    errorImagen ? "img-info input---error" : "img-info"
-                  }
-                >
-                  *Formatos válidos JPG, PNG, BMP, TIF, PDF.
-                </p>
-              </div>
 
             <div className="form-footer">
               <div className="final-info">

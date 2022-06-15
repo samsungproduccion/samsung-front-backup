@@ -9,30 +9,25 @@ const PurchaseInfo = () => {
   return (
     <div className="form-section">
       <div className="section-title">
-        <h2>Registra información de tu compra</h2>
+        <h2>2. Identificación del bien contratado</h2>
       </div>
       <div className="twice-row">
-        <FormikTextInput label="Número de pedido (*)" name="orderNumber" type="text" />
 
-        <FormikSelectInput label="Bien adquirido (*)" name="adquiredGood">
+        <FormikTextInput label="Monto reclamado S/ (*)" name="reclaimedAmount" type="text" />
+        <FormikSelectInput label="Identificación del bien contatado (*)" name="adquiredGood">
           <option value="">Selecciona</option>
-          <option value="producto">Producto</option>
-          <option value="servicio">Servicio</option>
+          <option value="P">Producto</option>
+          <option value="S">Servicio</option>
         </FormikSelectInput>
+       
       </div>
       <div className="area-container">
-        <FormikAreaInput
-          label="Descripción del producto o servicio"
+      <FormikAreaInput
+          label="Descripción (*)"
           name="adquiredDescription"
           rows="5"
           aria-invalid="true"
         />
-
-      </div>
-      <div className="twice-row">
-        <FormikTextInput label="Monto reclamado (*)" name="reclaimedAmount" type="text" />
-
-        <FormikDatePicker label="Fecha de compra (*)" name="datePurchased" type="text" />
       </div>
     </div>
   );
