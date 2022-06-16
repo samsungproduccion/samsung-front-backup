@@ -16,5 +16,8 @@ export const iniValues= {
   adquiredGood : "",
   adquiredDescription : "",
 
-  acceptedPrivacyPolicy: false,
+  tutorName: "",
+  tutorDocType: "",
+  tutorDocNumber: "",
+
 }

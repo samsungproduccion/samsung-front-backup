@@ -28,5 +28,4 @@ export const validationForm = Yup.object({
     claimDetail: Yup.string().required('El detalle de reclamación es obligatorio'),
     customerOrder: Yup.string().required('El pedido o compensación es obligatorio'),
 
-    acceptedPrivacyPolicy: Yup.boolean().isTrue("Debe aceptar la política de privacidad"),
 });

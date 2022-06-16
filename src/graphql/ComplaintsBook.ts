@@ -3,132 +3,93 @@ import { gql } from "@apollo/client";
 export const CREATE_COMPLAINT_BOOK = gql`
   mutation AddComplaintsBook(
     $firstName: String!
-    $lastName: String!
-    $email: String!
-    $nationalId: String!
+    $lastNameP: String!
+    $lastNameM: String!
+    $docType: String!
+    $docNumber: String!
     $address: String!
     $phone: String!
-    $acceptedPrivacyPolicy: Boolean!
-    $underAge: Boolean!
-    $state: String!
-    $city: String!
-    $district: String!
-    $datePurchased: String!
-    $orderNumber: String!
+    $email: String!
+    $reclaimedAmount: String!
     $adquiredGood: String!
     $adquiredDescription: String!
-    $reclaimedAmount: String!
+    $claimType: String!
     $claimDetail: String!
-    $complainDetail: String!
     $customerOrder: String!
-    $uploadFile: String!
-    $tutorFirstName: String!
-    $tutorLastName: String!
-    $tutorNationalId: String!
-    $tutorEmail: String!
-    $tutorPhone: String!
-    $tutorAddress: String!
-    $tutorState: String!
-    $tutorCity: String!
-    $tutorDistrict: String!
+    $underAge: Boolean!
+    $tutorName: String
+    $tutorDocType: String
+    $tutorDocNumber: String
   ) {
     addComplaintsBook(
       firstName: $firstName
-      lastName: $lastName
-      email: $email
-      nationalId: $nationalId
+      lastNameP: $lastNameP
+      lastNameM: $lastNameM
+      docType: $docType
+      docNumber: $docNumber
       address: $address
       phone: $phone
-      acceptedPrivacyPolicy: $acceptedPrivacyPolicy
-      underAge: $underAge
-      state: $state
-      city: $city
-      district: $district
-      datePurchased: $datePurchased
-      orderNumber: $orderNumber
+      email: $email
+      reclaimedAmount: $reclaimedAmount
       adquiredGood: $adquiredGood
       adquiredDescription: $adquiredDescription
-      reclaimedAmount: $reclaimedAmount
+      claimType: $claimType
       claimDetail: $claimDetail
-      complainDetail: $complainDetail
       customerOrder: $customerOrder
-      uploadFile: $uploadFile
-      tutorFirstName: $tutorFirstName
-      tutorLastName: $tutorLastName
-      tutorNationalId: $tutorNationalId
-      tutorEmail: $tutorEmail
-      tutorPhone: $tutorPhone
-      tutorAddress: $tutorAddress
-      tutorState: $tutorState
-      tutorCity: $tutorCity
-      tutorDistrict: $tutorDistrict
+      underAge: $underAge
+      tutorName: $tutorName
+      tutorDocType: $tutorDocType
+      tutorDocNumber: $tutorDocNumber
     ) {
       firstName
-      lastName
-      email
-      nationalId
+      lastNameP
+      lastNameM
+      docType
+      docNumber
       address
       phone
-      acceptedPrivacyPolicy
-      underAge
-      state
-      city
-      district
-      datePurchased
-      orderNumber
-      adquiredDescription
-      adquiredGood
+      email
       reclaimedAmount
+      adquiredGood
+      adquiredDescription
+      claimType
       claimDetail
-      complainDetail
       customerOrder
-      uploadFile
-      tutorLastName
-      tutorFirstName
-      tutorNationalId
-      tutorEmail
-      tutorPhone
-      tutorAddress
-      tutorState
-      tutorCity
-      tutorDistrict
+      underAge
+      tutorName
+      tutorDocType
+      tutorDocNumber
+      correlativo
+      f_date
+      createdAt
     }
   }
 `;
 
 export const COMPLAINT_BOOK_LIST = gql`
-  query ComplaintsBookList {
-    ComplaintsBookList {
-      firstName
-      lastName
-      email
-      nationalId
-      address
-      phone
-      acceptedPrivacyPolicy
-      underAge
-      state
-      city
-      district
-      datePurchased
-      orderNumber
-      adquiredGood
-      adquiredDescription
-      reclaimedAmount
-      claimDetail
-      complainDetail
-      customerOrder
-      uploadFile
-      tutorFirstName
-      tutorLastName
-      tutorNationalId
-      tutorEmail
-      tutorPhone
-      tutorAddress
-      tutorState
-      tutorCity
-      tutorDistrict
-      createdAt
-    }
-  }
+query ComplaintsBookList {
+  ComplaintsBookList {
+    firstName
+    lastNameP
+    lastNameM
+    docType
+    docNumber
+    address
+    phone
+    email
+    reclaimedAmount
+    adquiredGood
+    adquiredDescription
+    claimType
+    claimDetail
+    customerOrder
+    underAge
+    tutorName
+    tutorDocType
+    tutorDocNumber
+    correlativo
+    f_date
+    createdAt
+  } 
+}
 `;
