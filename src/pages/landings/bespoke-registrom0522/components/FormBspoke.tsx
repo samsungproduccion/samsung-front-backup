@@ -1,5 +1,4 @@
 import { FC, useRef, useState } from "react";
-import { artes } from "../includes/artes";
 import { Form, Formik } from "formik";
 import { sweetAlert } from "../../../../components/alert/sweetAlert";
 import { useMutation } from "@apollo/client";
@@ -19,7 +18,6 @@ import { ImagePicker } from "../../../../components/image_tools/image_picker";
 import { imageList } from "../includes/imageList";
 
 const FormBespoke: FC = () => {
-  const artRef = useRef<HTMLSelectElement>(null);
   const recaptcha = useRef<any>(null);
   const imageRef = useRef<any>(null);
 
@@ -29,9 +27,7 @@ const FormBespoke: FC = () => {
   const [loading, setLoading] = useState(false);
   const [errorImagen, setErrorImagen] = useState(false);
 
-  const [art, setArt] = useState({
-    ...artes[0],
-  });
+
 
   const [createUser] = useMutation(CREATE_EVOUCHER_BESPOKE, {
     onError(error) {
@@ -43,19 +39,7 @@ const FormBespoke: FC = () => {
     },
   });
 
-  //   const { Locationjsx, city, district, state, error } = Locations();
-  // console.log({city, district, state});
-  const handleChange = () => {
-    // formik.handleChange;
-    if (null !== artRef.current) {
-      const index = artRef.current.value;
-      const selected = artes.filter((arte) => arte.id === index)[0];
 
-      setArt({
-        ...selected,
-      });
-    }
-  };
 
   return (
     <div className="form-bespoke">
@@ -82,7 +66,7 @@ const FormBespoke: FC = () => {
             // if (!validRecaptcha) return setLoading(false);
 
             const response = await createUser({
-              variables: { ...values, image: imagenUrl, art: art.name },
+              variables: { ...values, image: imagenUrl, art: image },
             });
 
             if (response.data?.addEvoucherBespoke) {
@@ -98,7 +82,7 @@ const FormBespoke: FC = () => {
             console.log(error);
             setLoading(false);
           }
-          console.log({ ...values, image: imagenUrl, art: art.name });
+          console.log({ ...values, image: imagenUrl, art: image });
           setLoading(false);
         }}
       >
@@ -169,29 +153,8 @@ const FormBespoke: FC = () => {
                   *Formatos válidos JPG, PNG, BMP, TIF, PDF.
                 </p>
               </div>
-              <div className="ch-ff__field">
-                <label htmlFor="art">Selecciona tu diseño (*)</label>
-                <select
-                  ref={artRef}
-                  name="art"
-                  id="art"
-                  defaultValue="0"
-                  onChange={handleChange}
-                >
-                  <option value="1" disabled>
-                    Selecciona
-                  </option>
-                  {artes.map((arte, index) => (
-                    <option key={index} value={arte.id}>
-                      {arte.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
+       
               <div></div>
-            </div>
-            <div className="img-container">
-              <img src={art.img} alt={art.alt} />
             </div>
             {templatePickerTemplate}
             <div className="checkboxes">

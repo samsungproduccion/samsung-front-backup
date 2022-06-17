@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-gap: 30px;
+  padding: 0 20px;
+  margin: 0 auto;
   .pick-image{
     .list-image{
       width: 200px;
