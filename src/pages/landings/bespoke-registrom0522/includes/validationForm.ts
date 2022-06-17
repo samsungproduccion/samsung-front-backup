@@ -22,7 +22,4 @@ export const validationForm = Yup.object({
     .max(9, "Debe tener 9 digitos"),
   privacy: Yup.boolean().isTrue("Debe aceptar la política de privacidad"),
   terms: Yup.boolean().isTrue("Debe aceptar los terminos y condiciones"),
-  state: Yup.string().required("El departamento es obligatorio").notOneOf(['0'],'escoja'),
-  city: Yup.string().required("La ciudad es obligatoria").notOneOf(['0'],'escoja'),
-  district: Yup.string().required("El distrito es obligatorio").notOneOf(['0'],'escoja'),
 });

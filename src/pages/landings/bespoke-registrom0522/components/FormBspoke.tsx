@@ -47,7 +47,10 @@ const FormBespoke: FC = () => {
         initialValues={initialValues}
         validationSchema={validationForm}
         onSubmit={async (values, { resetForm }) => {
-          // return console.log(values);
+           console.log({...values, art: image, state: '', city:'', district: '' });
+           if (image==='' || image===undefined || image===null) { 
+            return alert('select an image');
+           }
           setLoading(true);
           const { imagenUrl, uploadError } = await UploadFile(
             imageRef.current.files
@@ -66,7 +69,7 @@ const FormBespoke: FC = () => {
             // if (!validRecaptcha) return setLoading(false);
 
             const response = await createUser({
-              variables: { ...values, image: imagenUrl, art: image },
+              variables: { ...values, image:imagenUrl, art: image, state: '1', city:'1', district: '1' },
             });
 
             if (response.data?.addEvoucherBespoke) {

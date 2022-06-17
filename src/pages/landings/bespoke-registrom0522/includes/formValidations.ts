@@ -8,7 +8,5 @@ export const initialValues = {
   terms: false,
   privacy: false,
   marketingOption: false,
-  state: "",
-  city: "",
-  district: "",
+
 }

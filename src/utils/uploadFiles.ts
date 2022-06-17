@@ -18,9 +18,9 @@ export const UploadFiles = async (files: FileList, imageFolder:string) => {
         try {
             const {data} = await  axios.post(url, formData);
             if (data.response) {
-              console.log(data.response);
+            //   console.log(data.response);
                 imagenUrl = data.response[0].url;
-                console.log(imagenUrl);
+                // console.log(imagenUrl);
             }else{
                 uploadError = true;
             }
@@ -29,7 +29,7 @@ export const UploadFiles = async (files: FileList, imageFolder:string) => {
                 uploadError
             }
         } catch (uploadError) {
-            console.log(uploadError)
+            // console.log(uploadError)
             uploadError = true;
             return {
                 imagenUrl,

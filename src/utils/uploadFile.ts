@@ -8,7 +8,7 @@ export const UploadFile = async (files: FileList) => {
 
     // const {files} = e.target;
     if (files) {
-        console.log(files ? files[0] : '');
+        // console.log(files ? files[0] : '');
         const formData = new FormData();
     
         formData.append("uploadFile", files[0]);
@@ -22,9 +22,17 @@ export const UploadFile = async (files: FileList) => {
             }else{
                 uploadError = true;
             }
+            return {
+                imagenUrl,
+                uploadError
+            }
         } catch (uploadError) {
             console.log(uploadError)
             uploadError = true;
+            return {
+                imagenUrl,
+                uploadError
+            }
         }
         
     }
