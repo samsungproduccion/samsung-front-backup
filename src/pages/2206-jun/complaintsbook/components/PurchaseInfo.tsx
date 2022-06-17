@@ -1,6 +1,5 @@
 import {
   FormikAreaInput,
-  FormikDatePicker,
   FormikSelectInput,
   FormikTextInput,
 } from "../../../../components/forms_v2/Inputs";
