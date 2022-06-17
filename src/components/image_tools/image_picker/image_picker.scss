@@ -1,0 +1,15 @@
+.image--picker--container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 30px;
+  .pick-image{
+    .list-image{
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+    }
+    .selected{
+      border: 1px solid red;
+    }
+  }
+}

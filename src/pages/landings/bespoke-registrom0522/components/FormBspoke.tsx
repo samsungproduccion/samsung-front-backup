@@ -1,5 +1,4 @@
 import { FC, useRef, useState } from "react";
-import Locations from "../../../../components/locations";
 import { artes } from "../includes/artes";
 import { Form, Formik } from "formik";
 import { sweetAlert } from "../../../../components/alert/sweetAlert";
@@ -15,11 +14,17 @@ import {
   PrivacyCheckBox,
   TermsCheckBox,
 } from "../../../../components/forms_v2/Inputs";
+import { initialValues } from "../includes/formValidations";
+import { ImagePicker } from "../../../../components/image_tools/image_picker";
+import { imageList } from "../includes/imageList";
 
 const FormBespoke: FC = () => {
   const artRef = useRef<HTMLSelectElement>(null);
   const recaptcha = useRef<any>(null);
   const imageRef = useRef<any>(null);
+
+  const {image, templatePickerTemplate} = ImagePicker(imageList);
+  console.log({image})
 
   const [loading, setLoading] = useState(false);
   const [errorImagen, setErrorImagen] = useState(false);
@@ -55,20 +60,7 @@ const FormBespoke: FC = () => {
   return (
     <div className="form-bespoke">
       <Formik
-        initialValues={{
-          voucher: "",
-          name: "",
-          lastname: "",
-          email: "",
-          dni: "",
-          phone: "",
-          terms: false,
-          privacy: false,
-          marketingOption: false,
-          state: "",
-          city: "",
-          district: "",
-        }}
+        initialValues={initialValues}
         validationSchema={validationForm}
         onSubmit={async (values, { resetForm }) => {
           // return console.log(values);
@@ -146,7 +138,6 @@ const FormBespoke: FC = () => {
                 name="phone"
                 type="text"
               />
-              <Locations />
               <div className="ch-ff__field fileUploader">
                 <label htmlFor="product">Adjunta tu Boleta (*)</label>
                 <input
@@ -202,6 +193,7 @@ const FormBespoke: FC = () => {
             <div className="img-container">
               <img src={art.img} alt={art.alt} />
             </div>
+            {templatePickerTemplate}
             <div className="checkboxes">
               <PrivacyCheckBox label="PrivacyPolicy" name="privacy" />
               <TermsCheckBox label="Terms and Conditions" name="terms"   />
