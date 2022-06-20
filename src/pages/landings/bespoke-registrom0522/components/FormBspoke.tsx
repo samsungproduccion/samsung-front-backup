@@ -16,18 +16,35 @@ import {
 import { initialValues } from "../includes/formValidations";
 import { ImagePicker } from "../../../../components/image_tools/image_picker";
 import { imageList } from "../includes/imageList";
+import { PersonalInfo } from "./Personalnfo";
+import { ImageSection } from "./ImageSection";
 
 const FormBespoke: FC = () => {
   const recaptcha = useRef<any>(null);
   const imageRef = useRef<any>(null);
-
-  const {image, templatePickerTemplate} = ImagePicker(imageList);
-  console.log({image})
-
   const [loading, setLoading] = useState(false);
   const [errorImagen, setErrorImagen] = useState(false);
+  const [doors, SetDoors] = useState("1");
+  const [selectedImages, setSelectedImages] = useState<string[]>([]);
 
+  // const selectedImages = imageList.filter(image =>image.additionalInfo===doors);
 
+  const modifyImages = (id: string) => {
+    // if (selectedImages.length >= 5 ) return;
+    const newArr = selectedImages;
+    if (newArr.includes(id)) {
+      const index = newArr.indexOf(id);
+      if (index > -1) {
+        newArr.splice(index, 1);
+      }
+    } else {
+      newArr.push(id);
+      setSelectedImages(newArr);
+    }
+    console.log(selectedImages);
+  };
+
+  const { image, templatePickerTemplate } = ImagePicker(imageList);
 
   const [createUser] = useMutation(CREATE_EVOUCHER_BESPOKE, {
     onError(error) {
@@ -39,18 +56,22 @@ const FormBespoke: FC = () => {
     },
   });
 
-
-
   return (
     <div className="form-bespoke">
       <Formik
         initialValues={initialValues}
         validationSchema={validationForm}
         onSubmit={async (values, { resetForm }) => {
-           console.log({...values, art: image, state: '', city:'', district: '' });
-           if (image==='' || image===undefined || image===null) { 
-            return alert('select an image');
-           }
+          console.log({
+            ...values,
+            art: image,
+            state: "",
+            city: "",
+            district: "",
+          });
+          if (image === "" || image === undefined || image === null) {
+            return alert("select an image");
+          }
           setLoading(true);
           const { imagenUrl, uploadError } = await UploadFile(
             imageRef.current.files
@@ -69,7 +90,14 @@ const FormBespoke: FC = () => {
             // if (!validRecaptcha) return setLoading(false);
 
             const response = await createUser({
-              variables: { ...values, image:imagenUrl, art: image, state: '1', city:'1', district: '1' },
+              variables: {
+                ...values,
+                image: imagenUrl,
+                art: image,
+                state: "1",
+                city: "1",
+                district: "1",
+              },
             });
 
             if (response.data?.addEvoucherBespoke) {
@@ -77,7 +105,7 @@ const FormBespoke: FC = () => {
               setLoading(false);
 
               // window.location.href = "https://samsung.com.pe/thank-you-bespoke-registro/";
-              alert('se registro');
+              alert("se registro");
             }
             // console.log(data)
             setLoading(false);
@@ -97,78 +125,85 @@ const FormBespoke: FC = () => {
               id="recaptcha-form"
               ref={recaptcha}
             />
-            <div className="input--container">
-              <FormikTextInput
-                label="Nro de Comprobante de Pago (*)"
-                name="voucher"
-                type="text"
-              />
-              <FormikTextInput label="Nombre (*)" name="name" type="text" />
-
-              <FormikTextInput
-                label="Apellidos (*)"
-                name="lastname"
-                type="text"
-              />
-              <FormikTextInput
-                label="DNI / Carnet de extranjería (*)"
-                name="dni"
-                type="text"
-              />
-              <FormikTextInput
-                label="Correo Electrónico (*)"
-                name="email"
-                type="text"
-              />
-              <FormikTextInput
-                label="Número de contacto (*)"
-                name="phone"
-                type="text"
-              />
-              <div className="ch-ff__field fileUploader">
-                <label htmlFor="product">Adjunta tu Boleta (*)</label>
-                <input
-                  ref={imageRef}
-                  type="file"
-                  accept=".jpg, .jpeg, .png, .pdf, .tif, .bmp"
-                  // onChange={(e)=> handleImage(e)}
-                  required
+            <PersonalInfo />
+            <div className="form-section">
+              <h2>Datos de tu compra</h2>
+              <div className="input--container">
+              <div className="ch-ff__field ch-ff__note false">
+                  <label htmlFor="">Cantidad comprada</label>
+                  <select
+                    className={"text-input"}
+                    onChange={(e) => SetDoors(e.target.value)}
+                  >
+                    <option selected value="1">
+                      1 Bespoke{" "}
+                    </option>
+                    <option value="2">2 Bespoke</option>
+                    <option value="3">3 Bespoke</option>
+                  </select>
+                </div>
+                
+                <FormikTextInput
+                  label="Nro de Comprobante de Pago (*)"
+                  name="voucher"
+                  type="text"
                 />
-                <p
-                  className={
-                    errorImagen ? "img-info input---error" : "img-info"
-                  }
-                >
-                  *Solo se podrá adjuntar un archivo con peso menor a 5MB.
-                </p>
-                <p
-                  className={
-                    errorImagen ? "img-info input---error" : "img-info"
-                  }
-                >
-                  *El documento cargado debe ser legible para su validación.
-                </p>
-                <p
-                  className={
-                    errorImagen ? "img-info input---error" : "img-info"
-                  }
-                >
-                  *Formatos válidos JPG, PNG, BMP, TIF, PDF.
-                </p>
+                <FormikTextInput
+                  label="Tienda de compra (*)"
+                  name="store"
+                  type="text"
+                />
+                <div className="ch-ff__field fileUploader">
+                  <label htmlFor="product">Adjunta tu Boleta (*)</label>
+                  <input
+                    ref={imageRef}
+                    type="file"
+                    accept=".jpg, .jpeg, .png, .pdf, .tif, .bmp"
+                    // onChange={(e)=> handleImage(e)}
+                    required
+                  />
+                  <p
+                    className={
+                      errorImagen ? "img-info input---error" : "img-info"
+                    }
+                  >
+                    *Solo se podrá adjuntar un archivo con peso menor a 5MB.
+                  </p>
+                  <p
+                    className={
+                      errorImagen ? "img-info input---error" : "img-info"
+                    }
+                  >
+                    *El documento cargado debe ser legible para su validación.
+                  </p>
+                  <p
+                    className={
+                      errorImagen ? "img-info input---error" : "img-info"
+                    }
+                  >
+                    *Formatos válidos JPG, PNG, BMP, TIF, PDF.
+                  </p>
+                </div>
+                <div></div>
+                <div></div>
               </div>
-       
-              <div></div>
             </div>
-            {templatePickerTemplate}
+            <div className="form-section">
+              <ImageSection
+                selectedImages={selectedImages}
+                setSelectedImages={modifyImages}
+              />
+              {/* {templatePickerTemplate} */}
+            </div>
             <div className="checkboxes">
               <PrivacyCheckBox label="PrivacyPolicy" name="privacy" />
-              <TermsCheckBox label="Terms and Conditions" name="terms"   />
+              <TermsCheckBox label="Terms and Conditions" name="terms" />
               <InformationCheckBox
                 label="Deseo recibir información de Samsung"
                 name="marketingOption"
               />
             </div>
-            <SubmitButton loading={loading} value={"PRE-REGÍSTRATE"} />
+            <SubmitButton loading={loading} value={"REGÍSTRATE"} />
           </Form>
         )}
       </Formik>

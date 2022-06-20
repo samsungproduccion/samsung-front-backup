@@ -3,4 +3,5 @@ export interface imagePicker{
   image: string;
   ref: string;
   name: string;
+  additionalInfo?: string;
 }

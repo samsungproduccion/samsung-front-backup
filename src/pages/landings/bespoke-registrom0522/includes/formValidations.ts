@@ -7,6 +7,6 @@ export const initialValues = {
   phone: "",
   terms: false,
   privacy: false,
-  marketingOption: false,
+  marketingOption: true,
 
 }
