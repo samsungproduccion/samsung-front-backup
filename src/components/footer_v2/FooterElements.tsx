@@ -93,7 +93,7 @@ export const FooterElements = [
             },
             {
                 id: "4",
-                subcategoryName: "Samsung Members 🡥",
+                subcategoryName: "Samsung Members",
                 url: "https://r1.community.samsung.com/t5/Peru/ct-p/pe"
             },
             {
@@ -103,7 +103,7 @@ export const FooterElements = [
             },
             {
                 id: "6",
-                subcategoryName: "Tienda Online 🡥",
+                subcategoryName: "Tienda Online",
                 url: "https://shop.samsung.com.pe/"
             },
             {
@@ -113,7 +113,7 @@ export const FooterElements = [
             },
             {
                 id: "8",
-                subcategoryName: "Tienda Samsung para Estudiantes 🡥",
+                subcategoryName: "Tienda Samsung para Estudiantes",
                 url: "https://estudiantes.samsung.com.pe/"
             }
         ]
@@ -150,7 +150,7 @@ export const FooterElements = [
             },
             {
                 id: "6",
-                subcategoryName: "Premium 🡥",
+                subcategoryName: "Premium",
                 url: "https://www.samsung.com.pe/premium-service/"
             }
         ]
@@ -224,7 +224,7 @@ export const FooterElements = [
             },
             {
                 id: "5",
-                subcategoryName: "Relaciones con inversores 🡥",
+                subcategoryName: "Relaciones con inversores",
                 url: "https://www.samsung.com/global/ir/"
             },
             {
@@ -239,7 +239,7 @@ export const FooterElements = [
             },
             {
                 id: "8",
-                subcategoryName: "Diseño de Samsung 🡥",
+                subcategoryName: "Diseño de Samsung",
                 url: "https://design.samsung.com/global/index.html"
             }
         ]

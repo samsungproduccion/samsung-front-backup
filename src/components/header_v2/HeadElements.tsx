@@ -910,7 +910,7 @@ export const HeaderElements = [
     },
     {
       id: '5',
-      categoria: 'Tienda Online 🡥',
+      categoria: 'Tienda Online',
       pos : 1,
       url: false,
       link: 'https://shop.samsung.com.pe/',
@@ -923,22 +923,22 @@ export const HeaderElements = [
           items : [
             {
               id: '1',
-              nombre : 'Celulares 🡥',
+              nombre : 'Celulares',
               url:'https://shop.samsung.com.pe/moviles/smartphones'
             },
             {
               id: '2',
-              nombre : 'Tablets 🡥',
+              nombre : 'Tablets',
               url:'https://shop.samsung.com.pe/moviles/tablets'
             },
             {
               id: '3',
-              nombre : 'Weareables 🡥',
+              nombre : 'Weareables',
               url:'https://shop.samsung.com.pe/moviles/wearables'
             },
             {
               id: '4',
-              nombre : 'Accesorios 🡥',
+              nombre : 'Accesorios',
               url:'https://shop.samsung.com.pe/moviles/accesorios'
             }
           ] 
@@ -949,12 +949,12 @@ export const HeaderElements = [
           items : [
             {
               id: '1',
-              nombre : 'TV 🡥',
+              nombre : 'TV',
               url:'https://shop.samsung.com.pe/dias-cyber-tv'
             },
             {
               id: '2',
-              nombre : 'Dispositivos de Audio 🡥',
+              nombre : 'Dispositivos de Audio',
               url:'https://shop.samsung.com.pe/audio'
             }
           ] 
@@ -965,22 +965,22 @@ export const HeaderElements = [
           items : [
             {
               id: '1',
-              nombre : 'Cocinas 🡥',
+              nombre : 'Cocinas',
               url:'https://shop.samsung.com.pe/lanzamiento-cocinas'
             },
             {
               id: '2',
-              nombre : 'Refrigeradoras 🡥',
+              nombre : 'Refrigeradoras',
               url:'https://shop.samsung.com.pe/Línea-hogar/Refrigeradoras'
             },
             {
               id: '3',
-              nombre : 'Lavadoras 🡥',
+              nombre : 'Lavadoras',
               url:'https://shop.samsung.com.pe/Línea-hogar/lavadoras'
             },
             {
               id: '4',
-              nombre : 'Microondas 🡥',
+              nombre : 'Microondas',
               url:'https://shop.samsung.com.pe/Línea-hogar/microondas'
             }
           ] 
@@ -1090,7 +1090,7 @@ export const HeaderElements = [
         },
         {
           id: '5',
-          subcat: 'Ciudadanía Corporativa 🡥',
+          subcat: 'Ciudadanía Corporativa',
           url:'http://csr.samsung.com/es/main.do',
           items : []
         }
@@ -1160,7 +1160,7 @@ export const HeaderElements = [
             },
             {
               id: '4',
-              nombre : 'Online shop FAQ 🡥',
+              nombre : 'Online shop FAQ',
               url:'https://shop.samsung.com.pe/preguntas-frecuentes'
             }
           ] 
@@ -1207,7 +1207,7 @@ export const HeaderElements = [
             },
             {
               id: '2',
-              nombre : 'Chat en Vivo 🡥',
+              nombre : 'Chat en Vivo',
               url:'https://www.samsung.com/pe/support/contact/#onlinesupport'
             },
             {
@@ -1222,12 +1222,12 @@ export const HeaderElements = [
             },
             {
               id: '5',
-              nombre : 'Comunidad Samsung 🡥',
+              nombre : 'Comunidad Samsung',
               url:'https://r1.community.samsung.com/t5/Peru/ct-p/pe'
             },
             {
               id: '6',
-              nombre : 'Online Shop FAQ 🡥',
+              nombre : 'Online Shop FAQ',
               url:'https://shop.samsung.com.pe/preguntas-frecuentes'
             },
           ] 
@@ -1258,7 +1258,7 @@ export const HeaderElements = [
       scat:[
         {
           id: '1',
-          subcat: 'Samsung Empresas 🡥',
+          subcat: 'Samsung Empresas',
           url: 'https://www.samsung.com/pe/business/',
           items : []
         },
@@ -1268,22 +1268,22 @@ export const HeaderElements = [
           items : [
             {
               id: '1',
-              nombre : 'Celulares 🡥',
+              nombre : 'Celulares',
               url:'https://www.samsung.com/pe/business/smartphones/'
             },
             {
               id: '2',
-              nombre : 'Rugged 🡥',
+              nombre : 'Rugged',
               url:'https://www.samsung.com/pe/business/mobile/rugged/'
             },
             {
               id: '3',
-              nombre : 'Tabletas 🡥',
+              nombre : 'Tabletas',
               url:'https://www.samsung.com/pe/business/tablets/'
             },
             {
               id: '4',
-              nombre : 'Samsung Knox 🡥',
+              nombre : 'Samsung Knox',
               url:'https://www.samsung.com/pe/business/mobile-solutions/samsung-knox/'
             }
           ] 
@@ -1294,37 +1294,37 @@ export const HeaderElements = [
           items : [
             {
               id: '1',
-              nombre : 'General 🡥',
+              nombre : 'General',
               url:'https://www.samsung.com/pe/business/displays/'
             },
             {
               id: '2',
-              nombre : 'Cartelería Digital 🡥',
+              nombre : 'Cartelería Digital',
               url:'https://www.samsung.com/pe/business/smart-signage/'
             },
             {
               id: '3',
-              nombre : 'TV Comerciales 🡥',
+              nombre : 'TV Comerciales',
               url:'https://www.samsung.com/pe/business/commercial-tvs/'
             },
             {
               id: '4',
-              nombre : 'Monitores 🡥',
+              nombre : 'Monitores',
               url:'https://www.samsung.com/pe/business/monitors/'
             },
             {
               id: '5',
-              nombre : 'Soluciones de Cartelería Digital 🡥',
+              nombre : 'Soluciones de Cartelería Digital',
               url:'https://www.samsung.com/pe/business/display-solutions/magicinfo/'
             },
             {
               id: '6',
-              nombre : 'Soluciones de Cartelería LED 🡥',
+              nombre : 'Soluciones de Cartelería LED',
               url:'https://www.samsung.com/pe/business/display-solutions/color-expert-led/'
             },
             {
               id: '7',
-              nombre : 'Soluciones de TV Comercial 🡥',
+              nombre : 'Soluciones de TV Comercial',
               url:'https://www.samsung.com/pe/business/display-solutions/lynk-reach-4-0/'
             },
           ] 
@@ -1335,37 +1335,37 @@ export const HeaderElements = [
           items : [
             {
               id: '1',
-              nombre : 'General 🡥',
+              nombre : 'General',
               url:'https://www.samsung.com/pe/business/system-air-conditioners/'
             },
             {
               id: '2',
-              nombre : 'Calentador de Aire a Agua 🡥',
+              nombre : 'Calentador de Aire a Agua',
               url:'https://www.samsung.com/pe/business/system-air-conditioners/air-to-water-heating-ehs/'
             },
             {
               id: '3',
-              nombre : 'Residencial 🡥',
+              nombre : 'Residencial',
               url:'https://www.samsung.com/pe/business/system-air-conditioners/residential/'
             },
             {
               id: '4',
-              nombre : 'VRF 🡥',
+              nombre : 'VRF',
               url:'https://www.samsung.com/pe/business/system-air-conditioners/vrf-dvm/'
             },
             {
               id: '5',
-              nombre : 'Multi Split 🡥',
+              nombre : 'Multi Split',
               url:'https://www.samsung.com/pe/business/system-air-conditioners/multi-split-fjm/'
             },
             {
               id: '6',
-              nombre : 'Comercial 🡥',
+              nombre : 'Comercial',
               url:'https://www.samsung.com/pe/business/system-air-conditioners/single-split-cac/'
             },
             {
               id: '7',
-              nombre : 'Chiller 🡥',
+              nombre : 'Chiller',
               url:'https://www.samsung.com/pe/business/system-air-conditioners/chiller/'
             },
           ] 
