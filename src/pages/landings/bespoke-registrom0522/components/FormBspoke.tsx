@@ -8,6 +8,7 @@ import SubmitButton from "../../../../components/forms_v2/Submit";
 import { validationForm } from "../includes/validationForm";
 import ReCAPTCHA from "react-google-recaptcha";
 import {
+  FormikSelectInput,
   FormikTextInput,
   InformationCheckBox,
   PrivacyCheckBox,
@@ -24,7 +25,6 @@ const FormBespoke: FC = () => {
   const imageRef = useRef<any>(null);
   const [loading, setLoading] = useState(false);
   const [errorImagen, setErrorImagen] = useState(false);
-  const [doors, SetDoors] = useState("1");
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
 
   // const selectedImages = imageList.filter(image =>image.additionalInfo===doors);
@@ -45,7 +45,6 @@ const FormBespoke: FC = () => {
     // console.log(selectedImages.join())
   };
 
-  const { image, templatePickerTemplate } = ImagePicker(imageList);
 
   const [createUser] = useMutation(CREATE_EVOUCHER_BESPOKE, {
     onError(error) {
@@ -65,14 +64,9 @@ const FormBespoke: FC = () => {
         onSubmit={async (values, { resetForm }) => {
           console.log({
             ...values,
-            art: image,
-            state: "",
-            city: "",
-            district: "",
+            art: selectedImages.join(),
           });
-          if (image === "" || image === undefined || image === null) {
-            return alert("select an image");
-          }
+          return;
           setLoading(true);
           const { imagenUrl, uploadError } = await UploadFile(
             imageRef.current.files
@@ -94,10 +88,7 @@ const FormBespoke: FC = () => {
               variables: {
                 ...values,
                 image: imagenUrl,
-                art: image,
-                state: "1",
-                city: "1",
-                district: "1",
+                art: selectedImages.join(),
               },
             });
 
@@ -114,7 +105,7 @@ const FormBespoke: FC = () => {
             console.log(error);
             setLoading(false);
           }
-          console.log({ ...values, image: imagenUrl, art: image });
+          console.log({ ...values, image: imagenUrl, art: selectedImages.join() });
           setLoading(false);
         }}
       >
@@ -130,19 +121,16 @@ const FormBespoke: FC = () => {
             <div className="form-section">
               <h2>Datos de tu compra</h2>
               <div className="input--container">
-              <div className="ch-ff__field ch-ff__note false">
-                  <label htmlFor="">Cantidad comprada</label>
-                  <select
-                    className={"text-input"}
-                    onChange={(e) => SetDoors(e.target.value)}
-                  >
-                    <option selected value="1">
-                      1 Bespoke{" "}
-                    </option>
-                    <option value="2">2 Bespoke</option>
-                    <option value="3">3 Bespoke</option>
-                  </select>
-                </div>
+              <FormikSelectInput
+                label="Cantidad Comprada (*)"
+                name="quantity"
+                as="select"
+              >
+                <option value="">Seleccione</option>
+                <option value="1">1 Bespoke</option>
+                <option value="2">2 Bespoke</option>
+                <option value="3">3 Bespoke</option>
+              </FormikSelectInput>
                 
                 <FormikTextInput
                   label="Nro de Comprobante de Pago (*)"

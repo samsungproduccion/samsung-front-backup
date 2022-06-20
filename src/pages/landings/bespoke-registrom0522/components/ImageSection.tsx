@@ -15,7 +15,7 @@ export const ImageSection = ({selectedImages, setSelectedImages}:Props) => {
           {imageList.map(image =>{
             if (image.additionalInfo==='1') {
               return(
-                <Image image={image} setSelectedImages={setSelectedImages} selectedImages={selectedImages} />
+                <Image key={image.id} image={image} setSelectedImages={setSelectedImages} selectedImages={selectedImages} />
               )
             }
           })}
@@ -27,7 +27,7 @@ export const ImageSection = ({selectedImages, setSelectedImages}:Props) => {
           {imageList.map(image =>{
             if (image.additionalInfo==='2') {
               return(
-                <Image image={image} setSelectedImages={setSelectedImages} selectedImages={selectedImages} />
+                <Image key={image.id} image={image} setSelectedImages={setSelectedImages} selectedImages={selectedImages} />
               )
             }
           })}
@@ -39,7 +39,7 @@ export const ImageSection = ({selectedImages, setSelectedImages}:Props) => {
           {imageList.map(image =>{
             if (image.additionalInfo==='3') {
               return(
-                <Image image={image} setSelectedImages={setSelectedImages} selectedImages={selectedImages} />
+                <Image key={image.id} image={image} setSelectedImages={setSelectedImages} selectedImages={selectedImages} />
               )
             }
           })}

@@ -20,6 +20,9 @@ export const validationForm = Yup.object({
     .matches(isNumber, "Teléfono no válido")
     .min(9, "Debe tener 9 digitos")
     .max(9, "Debe tener 9 digitos"),
+    address: Yup.string().required('La direccion es obligatoria'),
   privacy: Yup.boolean().isTrue("Debe aceptar la política de privacidad"),
   terms: Yup.boolean().isTrue("Debe aceptar los terminos y condiciones"),
+  store: Yup.string().required('La tienda de compra es obligatoria'),
+  quantity: Yup.string().required("Seleccione una opción").notOneOf(['0'], 'seleccionar'),
 });
