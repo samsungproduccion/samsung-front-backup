@@ -41,7 +41,8 @@ const FormBespoke: FC = () => {
       newArr.push(id);
       setSelectedImages(newArr);
     }
-    console.log(selectedImages);
+    // console.log(selectedImages);
+    // console.log(selectedImages.join())
   };
 
   const { image, templatePickerTemplate } = ImagePicker(imageList);

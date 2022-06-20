@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
 import { imageList } from '../includes/imageList';
 import { Image } from "./Image";
 interface Props{
