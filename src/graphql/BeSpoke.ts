@@ -1,55 +1,73 @@
 import { gql } from "@apollo/client";
 
 export const CREATE_EVOUCHER_BESPOKE = gql`
-  mutation Mutation(
+  mutation AddEvoucherBespoke(
     $name: String!
-    $lastname: String!
     $dni: String!
     $email: String!
     $phone: String!
+    $address: String!
+    $quantity: String!
     $voucher: String!
-    $state: String!
-    $city: String!
-    $district: String!
+    $store: String!
     $image: String!
     $art: String!
+    $privacy: Boolean!
+    $terms: Boolean!
     $marketingOption: Boolean!
+    $lastname: String!
   ) {
     addEvoucherBespoke(
       name: $name
-      lastname: $lastname
       dni: $dni
       email: $email
       phone: $phone
+      address: $address
+      quantity: $quantity
       voucher: $voucher
-      state: $state
-      city: $city
-      district: $district
+      store: $store
       image: $image
       art: $art
+      privacy: $privacy
+      terms: $terms
       marketingOption: $marketingOption
+      lastname: $lastname
     ) {
       name
       lastname
       dni
       email
       phone
+      address
+      quantity
       voucher
-      state
-      city
-      district
+      store
       image
       art
-      acceptedPrivacyPolicy
-      acceptedTermsOfService
+      terms
+      privacy
       marketingOption
+      created
+      createdAt
     }
   }
 `;
 
-export const CREATE_BESPOKE= gql`
-mutation AddBeSpokeUser($name: String!, $lastname: String!, $dni: String!, $email: String!, $phone: String!) {
-  addBeSpokeUser(name: $name, lastname: $lastname, dni: $dni, email: $email, phone: $phone) {
+export const CREATE_BESPOKE = gql`
+  mutation AddBeSpokeUser(
+    $name: String!
+    $lastname: String!
+    $dni: String!
+    $email: String!
+    $phone: String!
+  ) {
+    addBeSpokeUser(
+      name: $name
+      lastname: $lastname
+      dni: $dni
+      email: $email
+      phone: $phone
+    ) {
       name
       lastname
       dni
@@ -57,18 +75,16 @@ mutation AddBeSpokeUser($name: String!, $lastname: String!, $dni: String!, $emai
       phone
     }
   }
-
 `;
 
-
 export const BESPOKE_LIST = gql`
-    query BeSpokeList {
-        BeSpokeList {
-        phone
-        email
-        lastname
-        name
-        dni
-        }
+  query BeSpokeList {
+    BeSpokeList {
+      phone
+      email
+      lastname
+      name
+      dni
     }
+  }
 `;

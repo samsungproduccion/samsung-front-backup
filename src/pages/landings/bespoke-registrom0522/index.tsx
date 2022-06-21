@@ -9,7 +9,7 @@ import './styles.scss';
 const BeSpokeRegistro = () => {
    
     InitGtm('GTM-KTFDR5Q');
-    
+    document.title = 'Samsung | Bespoke';
     return(
         <>
         <Header />

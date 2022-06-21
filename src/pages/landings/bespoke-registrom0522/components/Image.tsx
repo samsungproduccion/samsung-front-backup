@@ -14,7 +14,7 @@ export const Image = ({image, selectedImages, setSelectedImages}:Props) => {
 
   const [selected, setSelected] = useState(false);
   const pickImage = (id: string) => {
-    if(selectedImages.length >= 5 && selected===false) return sweetAlert("warning", "Maximo 5 diseños seleccionables", "");
+    if(selectedImages.length >= 3 && selected===false) return sweetAlert("warning", "Maximo 3 diseños seleccionables", "");
     setSelected(!selected);
     setSelectedImages(id);
   }

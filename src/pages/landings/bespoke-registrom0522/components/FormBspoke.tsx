@@ -62,11 +62,6 @@ const FormBespoke: FC = () => {
         onSubmit={async (values, { resetForm }) => {
           const art = selectedImages.join();
           if(selectedImages.length===0) return sweetAlert("warning", "Debe seleccionar almenos 1 diseño", "");
-          console.log({
-            ...values,
-            art,
-          });
-          return;
           setLoading(true);
           const { imagenUrl, uploadError } = await UploadFile(
             imageRef.current.files
@@ -96,16 +91,14 @@ const FormBespoke: FC = () => {
               resetForm();
               setLoading(false);
 
-              // window.location.href = "https://samsung.com.pe/thank-you-bespoke-registro/";
-              alert("se registro");
+              window.location.href = "https://samsung.com.pe/thank-you-bespoke/";
+              // alert("se registro");
             }
             // console.log(data)
             setLoading(false);
           } catch (error) {
-            console.log(error);
             setLoading(false);
           }
-          console.log({ ...values, image: imagenUrl, art: selectedImages.join() });
           setLoading(false);
         }}
       >
@@ -184,6 +177,7 @@ const FormBespoke: FC = () => {
               />
               {/* {templatePickerTemplate} */}
             </div>
+            <div className="images-info">*Todas las Imagenes son Referenciales</div>
             <div className="checkboxes">
               <PrivacyCheckBox label="PrivacyPolicy" name="privacy" />
               <TermsCheckBox label="Terms and Conditions" name="terms" />
