@@ -8,22 +8,20 @@ export const UploadFile = async (files: FileList) => {
 
     // const {files} = e.target;
     if (files) {
-        // console.log(files ? files[0] : '');
+            // console.log(files ? files[0] : '');
         const formData = new FormData();
     
         formData.append("uploadFile", files[0]);
 
         try {
-            // const data = await  axios.post('http://localhost:4050/files', formData,{
-            //     headers: {
+            const data = await  axios.post('http://localhost:4050/files',formData);
+            // const data = await  fetch('http://localhost:4050/files', {
+            //     method: 'POST',
+            //     body: formData,
+            //     headers:{
             //         'Content-Type': 'multipart/form-data'
             //     }
             // });
-            const data = await  fetch('http://localhost:4050/files', {
-                method: 'POST',
-                body: formData,
-                
-            });
             console.log(data);
             // if (data.response) {
                 

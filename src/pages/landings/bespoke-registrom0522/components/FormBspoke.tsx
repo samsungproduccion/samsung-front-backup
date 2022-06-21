@@ -119,7 +119,7 @@ const FormBespoke: FC = () => {
                 name="quantity"
                 as="select"
               >
-                <option value="">Seleccione</option>
+                <option value="">Selecciona</option>
                 <option value="1">1 Bespoke</option>
                 <option value="2">2 Bespoke</option>
                 <option value="3">3 Bespoke</option>

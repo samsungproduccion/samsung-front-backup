@@ -10,7 +10,7 @@ export const ImageSection = ({selectedImages, setSelectedImages}:Props) => {
   return(
     <>
       <div className="image-section">
-        <h3>Elige tu diseño si compraste 1 bespoke</h3>
+        <h3>Elige tu diseño si compraste 1 BESPOKE</h3>
         <div className="images-container">
           {imageList.map(image =>{
             if (image.additionalInfo==='1') {
@@ -22,7 +22,7 @@ export const ImageSection = ({selectedImages, setSelectedImages}:Props) => {
         </div>
       </div>
       <div className="image-section ">
-        <h3>Elige tu diseño si compraste 2 bespokes</h3>
+        <h3>Elige tu diseño si compraste 2 BESPOKE</h3>
         <div className="images-container second">
           {imageList.map(image =>{
             if (image.additionalInfo==='2') {
@@ -34,7 +34,7 @@ export const ImageSection = ({selectedImages, setSelectedImages}:Props) => {
         </div>
       </div>
       <div className="image-section ">
-        <h3>Elige tu diseño si compraste 3 bespokes</h3>
+        <h3>Elige tu diseño si compraste 3 BESPOKE</h3>
         <div className="images-container third">
           {imageList.map(image =>{
             if (image.additionalInfo==='3') {
