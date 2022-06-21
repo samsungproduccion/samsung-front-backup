@@ -15,8 +15,6 @@ import {
   TermsCheckBox,
 } from "../../../../components/forms_v2/Inputs";
 import { initialValues } from "../includes/formValidations";
-import { ImagePicker } from "../../../../components/image_tools/image_picker";
-import { imageList } from "../includes/imageList";
 import { PersonalInfo } from "./Personalnfo";
 import { ImageSection } from "./ImageSection";
 
@@ -62,9 +60,11 @@ const FormBespoke: FC = () => {
         initialValues={initialValues}
         validationSchema={validationForm}
         onSubmit={async (values, { resetForm }) => {
+          const art = selectedImages.join();
+          if(selectedImages.length===0) return sweetAlert("warning", "Debe seleccionar almenos 1 diseño", "");
           console.log({
             ...values,
-            art: selectedImages.join(),
+            art,
           });
           return;
           setLoading(true);

@@ -145,9 +145,16 @@
 @media screen and (max-width: 768px) {
 
     .main-section{
-        .form-bespoke{ 
+        .form-bespoke{
+            margin-top: 30px;
+            .form-section{
+                h2{
+                    font-size: 25px;
+                    padding-left: 10px;
+                }
+            }
             .input--container{
-                padding: 50px 30px;
+                padding: 20px 20px;
                 div{
                     width: 100%;
                     margin-bottom: 5px;
@@ -166,6 +173,50 @@
                 margin: 20px auto;
                 padding: 50px 30px;
                 flex-direction: column;
+            }
+            .image-section{
+                margin-top: 0px;
+                margin-bottom: 100px;
+                
+                h3{
+                    padding-left: 10px;
+                    font-size: 25px;
+                    margin-bottom: 15px;
+                }
+                .images-container{
+                    grid-template-columns: repeat(2,1fr);
+                    padding: 0 10px;
+                    // border: 1px solid rgb(125, 121, 121);
+                    .image-container{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        border: 2px solid transparent;
+                        cursor: pointer;
+                        h4{
+                            font-size: 20px;
+                        }
+                        img{
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    .selected {
+                        border: 2px solid black;
+                    }
+                }
+                .second{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+                .third{
+                    display: flex;
+                    img{
+                        width: 100%!important;
+                    }
+                }
             }
         }
     }

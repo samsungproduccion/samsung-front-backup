@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sweetAlert } from "../../../../components/alert/sweetAlert";
 import { imagePicker } from "../../../../types/images";
 
 interface Props{
@@ -13,7 +14,7 @@ export const Image = ({image, selectedImages, setSelectedImages}:Props) => {
 
   const [selected, setSelected] = useState(false);
   const pickImage = (id: string) => {
-    if(selectedImages.length >= 5 && selected===false) return alert('Solo puede seleccionar 5 imagenes');
+    if(selectedImages.length >= 5 && selected===false) return sweetAlert("warning", "Maximo 5 diseños seleccionables", "");
     setSelected(!selected);
     setSelectedImages(id);
   }
