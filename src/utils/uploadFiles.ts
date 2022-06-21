@@ -16,14 +16,23 @@ export const UploadFiles = async (files: FileList, imageFolder:string) => {
         formData.append("getFolder", imageFolder);
 
         try {
-            const {data} = await  axios.post(url, formData);
-            if (data.response) {
-            //   console.log(data.response);
-                imagenUrl = data.response[0].url;
-                // console.log(imagenUrl);
-            }else{
-                uploadError = true;
-            }
+            // const {data} = await  axios.post(url, formData);
+            const data = await  fetch(url, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                    }
+            });
+            console.log(data);
+            return ;
+            // if (data.response) {
+            // //   console.log(data.response);
+            //     imagenUrl = data.response[0].url;
+            //     // console.log(imagenUrl);
+            // }else{
+            //     uploadError = true;
+            // }
             return {
                 imagenUrl,
                 uploadError

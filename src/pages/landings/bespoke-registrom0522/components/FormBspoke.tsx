@@ -126,7 +126,7 @@ const FormBespoke: FC = () => {
               </FormikSelectInput>
                 
                 <FormikTextInput
-                  label="Nro de Comprobante de Pago (*)"
+                  label="Nro. de Comprobante de Pago (*)"
                   name="voucher"
                   type="text"
                 />
@@ -177,7 +177,7 @@ const FormBespoke: FC = () => {
               />
               {/* {templatePickerTemplate} */}
             </div>
-            <div className="images-info">*Todas las Imagenes son Referenciales</div>
+            <div className="images-info">Todas las imágenes son referenciales</div>
             <div className="checkboxes">
               <PrivacyCheckBox label="PrivacyPolicy" name="privacy" />
               <TermsCheckBox label="Terms and Conditions" name="terms" />
