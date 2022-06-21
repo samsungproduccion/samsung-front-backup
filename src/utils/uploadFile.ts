@@ -14,16 +14,16 @@ export const UploadFile = async (files: FileList) => {
         formData.append("uploadFile", files[0]);
 
         try {
-            const data = await  axios.post('http://localhost:4050/files', formData,{
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-            // const data = await  fetch(url, {
-            //     method: 'POST',
-            //     body: formData,
-                
+            // const data = await  axios.post('http://localhost:4050/files', formData,{
+            //     headers: {
+            //         'Content-Type': 'multipart/form-data'
+            //     }
             // });
+            const data = await  fetch('http://localhost:4050/files', {
+                method: 'POST',
+                body: formData,
+                
+            });
             console.log(data);
             // if (data.response) {
                 

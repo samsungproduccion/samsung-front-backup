@@ -185,7 +185,7 @@ export const TermsCheckBox = ({
         <div>
           Acepto los{" "}
           <a href={url} className="ch-link" target="_blank" rel="noreferrer">
-            Terminos y condiciones (*){" "}
+            Términos y condiciones (*){" "}
           </a>
         </div>
         <input
