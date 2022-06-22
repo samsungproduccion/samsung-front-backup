@@ -64,7 +64,8 @@ const FormBespoke: FC = () => {
           if(selectedImages.length===0) return sweetAlert("warning", "Debe seleccionar almenos 1 diseño", "");
           setLoading(true);
           const { imagenUrl, uploadError } = await UploadFile(
-            imageRef.current.files
+            imageRef.current.files,
+            'evoucherBespoke'
           );
           // console.log({imagenUrl, uploadError})
           if (uploadError) {

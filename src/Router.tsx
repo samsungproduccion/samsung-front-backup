@@ -14,6 +14,7 @@ import ComplaintsBook from "./pages/2206-jun/complaintsbook";
 import BespokeOechsle from "./pages/2206-jun/bespoke-oechsle";
 import BespokeFalabella from "./pages/landings/bespoke-falabella";
 import BespokeRipley from "./pages/2206-jun/bespoke-ripley";
+import { Test } from "./pages/Test";
 
 
 
@@ -35,6 +36,7 @@ const Router:FC = () => {
                 <Route path="/bespoke-oechsle" element={<BespokeOechsle />} />
                 <Route path="/bespoke-ripley" element={<BespokeRipley />} />
                 <Route path="/libro-de-reclamaciones" element={<ComplaintsBook />} />
+                <Route path="/test" element={<Test />} />
                 <Route path="*" element={<PremiumService />} />
             </Routes>
 
