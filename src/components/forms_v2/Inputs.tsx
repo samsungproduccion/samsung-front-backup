@@ -1,6 +1,7 @@
 import { ErrorMessage, useField, useFormikContext } from "formik";
 import "flatpickr/dist/themes/airbnb.css";
 import Flatpickr from "react-flatpickr";
+import { useEffect } from "react";
 
 interface InputType1 {
   label: string;
@@ -249,4 +250,23 @@ export const InformationCheckBox = ({ label, ...props }: InputType2) => {
       </label>
     </div>
   );
+};
+
+export const FocusError = () => {
+  const { errors, isSubmitting, isValidating } = useFormikContext();
+
+  useEffect(() => {
+    if (isSubmitting && !isValidating) {
+      let keys = Object.keys(errors);
+      if (keys.length > 0) {
+        const selector = `[name=${keys[0]}]`;
+        const errorElement = document.querySelector(selector) as HTMLElement;
+        if (errorElement) {
+          errorElement.focus();
+        }
+      }
+    }
+  }, [errors, isSubmitting, isValidating]);
+
+  return null;
 };

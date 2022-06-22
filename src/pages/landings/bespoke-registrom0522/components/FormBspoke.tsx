@@ -8,6 +8,7 @@ import SubmitButton from "../../../../components/forms_v2/Submit";
 import { validationForm } from "../includes/validationForm";
 import ReCAPTCHA from "react-google-recaptcha";
 import {
+  FocusError,
   FormikSelectInput,
   FormikTextInput,
   InformationCheckBox,
@@ -25,7 +26,6 @@ const FormBespoke: FC = () => {
   const [errorImagen, setErrorImagen] = useState(false);
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
 
-  // const selectedImages = imageList.filter(image =>image.additionalInfo===doors);
 
   const modifyImages = (id: string) => {
     // if (selectedImages.length >= 5 ) return;
@@ -187,6 +187,7 @@ const FormBespoke: FC = () => {
                 name="marketingOption"
               />
             </div>
+            <FocusError />
             <SubmitButton loading={loading} value={"REGÍSTRATE"} />
           </Form>
         )}
